@@ -1,11 +1,18 @@
 <script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
+import MainLayout from '@/layouts/MainLayout.vue';
+import TitleSection from '../components/TitleSection.vue'
+
+
 </script>
 
 <template>
-  <main>
-  <div class="h-screen w-full flex items-center justify-center bg-black text-white text-4xl">
-    <h1>Vue 3 + tailwind</h1>
+  <div>
+      <TitleSection />
+      <MainLayout>
+    </MainLayout>
   </div>
-  </main>
 </template>
+
+<style scoped>
+
+</style>
