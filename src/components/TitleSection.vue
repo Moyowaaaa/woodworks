@@ -12,7 +12,7 @@
                 </div>
 
                 <div class="flex flex-col gap-2">
-                    <p class="text-lg font-[avenir]">MORDERN & MINIMALISTIC</p>
+                    <p class="text-lg font-[avenir]">MODERN & MINIMALISTIC</p>
                     <h1 class="text-6xl font-[avenir-bold]" >FIND YOUR <br/> PERFECT FURNITURE</h1>
                     <p class="font-[avenir-medium] w-[35rem]">Nothing beats finding the perfect furniture for your home, office,
 resturants & parks. 
