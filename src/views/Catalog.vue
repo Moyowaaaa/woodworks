@@ -10,7 +10,7 @@
 
                 <div class="w-full ">
                     <!-- <h2>Catalog</h2> -->
-                    <small class="font-[avenir-light]">Catalog</small>
+                    <small class="font-[avenir-light] text-lg">Catalog</small>
                         <h1 class="font-[avenir-medium] text-[#005454] text-4xl">NEW CHAIR COLLECTION</h1>
                         <p class="text-lg font-[avenir-medium]">Sofa Chairs, Dining Chair, Hull Chair, Nolan Chair, Mordern Chair, Ingatop Chair.</p>
                 </div>
@@ -22,8 +22,8 @@
         
             <div class="w-10/12 mx-auto ">
                 <h1 class="font-[avenir-medium]  pt-6   ">Catalog</h1>
-                <div class="w-full  grid grid-cols-5 grid-rows-4  gap-4 py-12">
-                    <StoreProductCard :product="product" v-for="product in ProductStore.allProducts"/>
+                <div class="w-full  grid grid-cols-4 grid-rows-3  gap-4 py-12">
+                    <StoreProductCard :product="product" v-for="product in ProductStore.products"/>
                  
                 </div>
 
@@ -49,13 +49,14 @@ import useProductStore from '@/stores/ProductStore';
 import StoreProductCard from '../components/StoreProductCard.vue'
 const ProductStore = useProductStore()
 
+console.log(ProductStore.getProducts)
 
 
 </script>
 
 <style scoped>
 .jumbotron{
-    background-image: url('images/catalog.png');
+    background-image: url('../assets/images/catalog.png');
     background-size: cover;
     background-repeat: no-repeat;
 }

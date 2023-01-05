@@ -11,21 +11,28 @@
                 <p class="font-[avenir-bold] text-[#57A695] text-xl">{{ product.price }}</p>
             </div>
         </div>
+        </div>
+
+    
         
-    </div>
+
 </template>
 
 <script setup lang="ts">
-type ProductProps ={
-    image:string,
+type item = {
     name:string,
-    price:string
-    id:number
+    category:string,
+    description:string,
+    id:string,
+    image:string,
+    price:number
+    colors:[string,string]
+    company:string,
     productCode:number
-}
 
+}
 interface Product {
-    product:ProductProps
+    product:item
 }
 
 defineProps<Product>()
