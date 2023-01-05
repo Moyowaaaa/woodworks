@@ -195,7 +195,7 @@ const useProductStore = defineStore('ProductStore', {
                     material:'Veneer',
                     country:'Wales',
                     productCode:14673,
-                    bestSeller:true,
+                    
                     
                 },
                 {
@@ -238,13 +238,31 @@ const useProductStore = defineStore('ProductStore', {
                     // colors:['black','grey'],
                     productCode:15985,
                 },
+                {
+                    id:18,
+                    image:'/images/blueHullChair.png',
+                    name:'Blue Hull Chair',
+                    price:'N54k',
+                    category:'Living Room',
+                    type:'Chair',
+                    size:'50cm x 75cm x 86cm',
+                    material:'Veneer',
+                    country:'Sweden',
+                    // colors:['black','grey'],
+                    productCode:28910,
+                    bestSeller:true,
+                },
                
             ]
         };
     },
     getters:{
-        bestSellers:(state) => state.products.filter((product) => product.bestSeller === true)
-    }
+        bestSellers:(state) => state.products.filter((product) => product.bestSeller === true),
+        allProducts:(state) => state.products,
+        singleProduct:(state) => {
+            return (id:number) => state.products.filter((item) => item.id === id)
+        }
+    },
 })
 
 

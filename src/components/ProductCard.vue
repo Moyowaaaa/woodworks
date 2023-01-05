@@ -3,7 +3,7 @@
         <img :src="product.image" />
         <div class="w-full  flex justify-between items-center">
             <div class="font-[avenir-bold]"> {{ product.name }} <br/>
-            {{ product.id }}
+            {{ product.productCode }}
 
         </div>
             <div>
@@ -21,6 +21,7 @@ type ProductProps ={
     name:string,
     price:string
     id:number
+    productCode:number
 }
 
 interface Product {

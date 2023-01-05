@@ -1,5 +1,7 @@
 <template>
-    <div class="card  min-h-[25rem]  h-auto flex flex-col bg-white  grid  row-span-4 rounded-lg flex flex-col " :class="[product.large=== true ? 'col-span-2' : 'col-span-1' ]"   >
+
+    <div class="card  min-h-[25rem]  h-auto flex flex-col bg-white  grid  row-span-4 rounded-lg flex flex-col " :class="[product.large ? 'col-span-2' : 'col-span-1' ]"   >
+        <RouterLink :to="('item/' + product.id)">
         <div class= "bg w-full flex flex-col "  :class="[product.large ? 'h-full object-contain' : 'h-[19rem] relative justify-center items-center' ]" :style="{ backgroundImage: `url('${product.image}')` }">
               <!-- <img :src="product.image" class=""/> -->
 
@@ -39,8 +41,9 @@
     
 
     
-      
+    </RouterLink>
     </div>
+   
 </template>
 
 <script setup lang="ts">
@@ -48,14 +51,9 @@ interface ProductProps {
     image:string,
     name:string,
     price:string
-    id:number,
-    category:string,
-    type:string,
-    country:string,
     productCode:number,
-    material:string,
-    size:string
-    bestSeller:string | undefined,
+    id:number,
+    // bestSeller:string | undefined,
     large:boolean | undefined
 }
 
@@ -64,6 +62,7 @@ interface Product {
 }
 
 defineProps<Product>()
+
 
 
 
