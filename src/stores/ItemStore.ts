@@ -17,7 +17,8 @@ const useItemStore = defineStore('ItemStore', {
                     // colors:['black','grey'],
                     productCode:10000,
                     large:true,
-                    slug:'black-volar'
+                    slug:'black-volar',
+                    Limage:'/images/blackValorSofa.png',
 
                 },
                 {
@@ -32,7 +33,8 @@ const useItemStore = defineStore('ItemStore', {
                     country:'Italia',
                     // colors:['blue','grey'],
                     productCode:12572,
-                    slug:'blue-volar'
+                    slug:'blue-volar',
+                    Limage:'/images/blueValorChairr.png',
 
                 },
                 {
@@ -47,7 +49,8 @@ const useItemStore = defineStore('ItemStore', {
                     country:'Italia',
                     // colors:['blue','grey'],
                     productCode:15673,
-                    slug:'blue-Nolan'
+                    slug:'blue-Nolan',
+                    Limage:'/images/blueNolanChairr.png',
 
                 },
                 {
@@ -62,7 +65,8 @@ const useItemStore = defineStore('ItemStore', {
                     country:'Italia',
                     // colors:['blue','grey'],
                     productCode:15973,
-                    slug:'blue-Nola-Chair'
+                    slug:'blue-Nola-Chair',
+                    Limage:'/images/blueNolanChairr.png',
 
                 },
                 {
@@ -77,7 +81,8 @@ const useItemStore = defineStore('ItemStore', {
                     country:'Poland',
                     // colors:['blue','grey'],
                     productCode:14673,
-                    slug:'navy-volar'
+                    slug:'navy-volar',
+                    Limage:'/images/navyBlueValorChairr.png',
 
                 },
                 {
@@ -92,7 +97,9 @@ const useItemStore = defineStore('ItemStore', {
                     country:'Sweden',
                     // colors:['black','grey'],
                     productCode:15985,
-                    slug:'green-Nolan'
+                    slug:'green-Nolan',
+                    Limage:'/images/greenNolanSofaa.png',
+                    
 
                 },
                 {
@@ -106,7 +113,8 @@ const useItemStore = defineStore('ItemStore', {
                     size:'50cm x 50cm x 20cm',
                     material:'Mahagony Wood',
                     country:'Sweden',
-                    slug:'bedside-stand'
+                    slug:'bedside-stand',
+                    Limage:'/images/bedsideTableStandd.png',
                 },
                 {
                     id:8,
@@ -120,7 +128,9 @@ const useItemStore = defineStore('ItemStore', {
                     country:'Sweden',
                     // colors:['black','grey'],
                     productCode:16780,
-                    slug:'grey-sofa'
+                    slug:'grey-sofa',
+                    Limage:'/images/greyNolanSofaa.png',
+                    
 
                 },
 
@@ -136,7 +146,8 @@ const useItemStore = defineStore('ItemStore', {
                     country:'Italia',
                     productCode:15985,
                     bestSeller:true,
-                    slug:'black-nolan'
+                    slug:'black-nolan',
+                    Limage:'/images/greyNolanChairr.png',
                     
                 },
 
@@ -152,7 +163,9 @@ const useItemStore = defineStore('ItemStore', {
                     size:'35cm x 75cm x 86cm',
                     material:'Veneer',
                     country:'Italia',
-                    slug:'grey-Hull'
+                    slug:'grey-Hull',
+                    Limage:'/images/greyHullChairr.png',
+                    
                 },
                 {
                     id:11,
@@ -166,7 +179,8 @@ const useItemStore = defineStore('ItemStore', {
                     size:'35cm x 45cm x 86cm',
                     material:'Mahagony Wood',
                     country:'Italia',
-                    slug:'grey-lamp'
+                    slug:'grey-lamp',
+                    Limage:'/images/greyStandingLampp.png',
                 },
                 {
                     id:12,
@@ -180,7 +194,8 @@ const useItemStore = defineStore('ItemStore', {
                     size:'50cm x 50cm x 86cm',
                     material:'Array',
                     country:'India',
-                    slug:'brown-deli'
+                    slug:'brown-deli',
+                    Limage:'/images/brownDeliChairr.png',
                 },
                 {
                     id:13,
@@ -194,7 +209,8 @@ const useItemStore = defineStore('ItemStore', {
                     size:'50cm x 50cm x 86cm',
                     material:'Array',
                     country:'Great Britain',
-                    slug:'beige-nolan'
+                    slug:'beige-nolan',
+                    Limage:'/images/greyNolaa.png',
                 },
 
                 {
@@ -208,7 +224,8 @@ const useItemStore = defineStore('ItemStore', {
                     material:'Veneer',
                     country:'Wales',
                     productCode:14673,
-                    slug:'grey-no-chair'
+                    slug:'grey-no-chair',
+                    Limage:'/images/greyNolanChairr.png',
                     
                     
                 },
@@ -225,7 +242,8 @@ const useItemStore = defineStore('ItemStore', {
                     // colors:['black','grey'],
                     productCode:15785,
                     large:true,
-                    slug:'dark-grey'
+                    slug:'dark-grey',
+                    Limage:'/images/darkGreyNolanSofaa.png',
                     
                 },
                 {
@@ -240,7 +258,8 @@ const useItemStore = defineStore('ItemStore', {
                     country:'Sweden',
                     // colors:['black','grey'],
                     productCode:15785,
-                    slug:'blue-avel'
+                    slug:'blue-avel',
+                    Limage:'/images/blueAvelChairr.png',
                 },
                 {
                     id:17,
@@ -254,7 +273,8 @@ const useItemStore = defineStore('ItemStore', {
                     country:'Sweden',
                     // colors:['black','grey'],
                     productCode:15985,
-                    slug:'grey-venir'
+                    slug:'grey-venir',
+                    Limage:'/images/greyVenirChairr.png',
                 },
                 {
                     id:18,
@@ -269,7 +289,8 @@ const useItemStore = defineStore('ItemStore', {
                     // colors:['black','grey'],
                     productCode:28910,
                     bestSeller:true,
-                    slug:'blue-hull'
+                    slug:'blue-hull',
+                    Limage:'/images/blueHullChairr.png',
                 },
                
             ]
@@ -285,7 +306,7 @@ const useItemStore = defineStore('ItemStore', {
             return (productSlug: any) => state.products.find((product) => product.slug === productSlug);
         },
         productById: (state) => {
-            return(productId:any) => (state.products.find((product) => product.id === (productId)))     
+            return(productId:any) => (state.products.find((product) => product.id === (+productId)))     
         }
     },
 })

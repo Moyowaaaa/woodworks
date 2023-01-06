@@ -1,9 +1,13 @@
 <script setup lang="ts">
 // import {} from 'vue-router'
+import useCartStore from '@/stores/CartStore';
 import { onMounted,ref } from 'vue';
 
 
 let menu = ref<boolean>(false)
+
+const CartStore = useCartStore()
+
 
 
         
@@ -41,9 +45,16 @@ let menu = ref<boolean>(false)
             </div>
 
 
+            <router-link to="/cart">
             <div class="w-max p-2 rounded-md bg-black  flex items-center justify-center">
                 <img src="../assets/images/cart.svg" class="w-[1rem]"/>
+
+                <div class="absolute top-2  ml-6 text-white bg-[#57A695] px-1 rounded-full text-xs">
+                    {{ CartStore.itemsInCart }}
+                </div>
             </div>
+            </router-link>
+
 
 
             <router-link to="/signup">

@@ -87,44 +87,44 @@
 
 <style scoped>
 .sofas{
-    background-image: url('images/sofa.png');
+    background-image: url('../assets/images/sofa.png');
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 .decor{
-    background-image: url('images/decor.png');
+    background-image: url('../assets/images/decor.png');
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 .lamp{
-    background-image: url('images/lamp.png');
+    background-image: url('../assets/images/lamp.png');
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 
 .nightStand{
-    background-image: url('images/nightstand.png');
+    background-image: url('../assets/images/nightstand.png');
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 .chair{
-    background-image: url('images/chair.png');
+    background-image: url('../assets/images/chair.png');
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 .sink{
-    background-image: url('images/sink.png');
+    background-image: url('../assets/images/sink.png');
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 .table{
-    background-image: url('images/table.png');
+    background-image: url('../assets/images/table.png');
     background-size: cover;
     background-repeat: no-repeat;
 }

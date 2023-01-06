@@ -4,6 +4,7 @@ import Signup from '../views/Signup.vue'
 import Catalog from '../views/Catalog.vue'
 import Product from '../views/Product.vue'
 import Item from '../views/Item.vue'
+import Cart from '../views/Cart.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -24,15 +25,20 @@ const router = createRouter({
       component: Catalog
     },
     {
+      path: '/cart',
+      name: 'cart',
+      component: Cart
+    },
+    {
       path: '/item/:id',
       name: 'item-id',
       component: Product
     },
-    // {
-    //   path: '/prod/:id',
-    //   name: 'item-id',
-    //   component: Item
-    // },
+    {
+      path: '/prod/:id',
+      name: 'prod-id',
+      component: Item
+    },
     // {
     //   path: '/item/:id',
     //   name: 'item-id',

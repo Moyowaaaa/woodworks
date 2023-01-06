@@ -1,100 +1,171 @@
 <template>
-    <div>
+    <div class="flex flex-col">
         <Navbar />
-     
-        <div class="flex flex-col px-10 py-10">
+<MainLayout >
+        <div class="flex flex-col px-10 py-10" id="page">
 
-            <div class="flex flex-col gap-2 mt-8">
-                <div class="flex items-center gap-2">Catalog / {{ product[0].category }}s /{{ product[0].name }}</div>
-                <h1 class="text-4xl text-[#02886B] font-medium">{{ product[0].name }}</h1>
-                <div class="flex">Product Code: {{ product[0].id }}</div>
+<div class="flex flex-col gap-2 mt-8" id="page">
+    
+    <div class="link flex items-center w-max" @click="router.back()"> <img src="../assets/images/rightArrow.svg" class="w-[30px]"/> Back</div>
+<div class="flex items-center gap-2 font-[avenir-medium]">
+    <p>Catalog /</p>  <p> {{ product?.type }}s / </p> <p class="font-[avenir-bold]">{{ product?.name }}</p></div>
+<h1 class="text-4xl text-[#02886B] font-medium">{{ product?.name }}</h1>
+<div class="flex gap-6 font-[avenir-medium] font-medium">
+    <p>Product Code: {{ product?.productCode }}</p>
 
-            </div>
+    <p>{{ reviews }} Reviews</p>
 
-
-            <div class="w-full flex justify-center gap-4 ">
-
-                <div class="w-6/12 flex flex-col items-center py-8 gap-6">
-                    <div class="bg rounded-xl bg-white h-[30rem] w-9/12" :style="{ backgroundImage: `url('${product[0].image}')` }">
-                        <!-- <img :src="product[0].image" class="w-9/12 "/> -->
-                    </div>
+    <p>Bought over {{ numberOfTimesBought }} times</p>
 
 
-                    <div class="flex flex-col border-2 border-[green] w-9/12">
-                        <h1 class="underline text-center font-[avenir-medium] text-[#009676]">Additional Information</h1>
-                    </div>
-                   
-                </div>
-                <div class="w-5/12  py-32 flex flex-col gap-2">
-                  <p class="text-[#02886B] font-[avenir-bold] text-xl"> N{{ convertedPrice }}K </p>
 
-                  <p class="w-[25rem] text-justify">{{ product[0].description }}</p>
-                </div>
-            </div>
+
+</div>
+
+<div class="w-10/12 mx-auto flex gap-6">
+    <div class="w-6/12 flex flex-col items-center py-8 gap-6 ">
+
+        <div class="bg w-full  rounded-lg h-[25rem]" :style="{ backgroundImage: `url('${product?.Limage}')` }" :class="[product.large === true ? 'bg-transparent' : 'bg-white']"></div>
+
+        <div class="flex flex-col w-full font-[avenir-medium]">
+            <div class="flex w-full justify-between items-center">
+            <p>Description</p>
+
+            <h1 class="underline text-center font-[avenir-medium] text-[#009676]">Additional Information</h1>
+
+            <p>Reviews</p>
         </div>
-   
+
+        <div class="flex pt-2 justify-between border-b-2 border-b-[#C4C4C4] mt-4 ">
+            <p>Category</p>
+            <p>{{ product.type }}</p>
+        </div>
+
+        <div class="flex pt-2 justify-between border-b-2 border-b-[#C4C4C4]">
+            <p>Size</p>
+            <p>{{ product.size }}</p>
+        </div>
+
+        <div class="flex pt-2 justify-between border-b-2 border-b-[#C4C4C4]">
+            <p>Material</p>
+            <p>{{ product.material }}</p>
+        </div>
+
+        <div class="flex pt-2 justify-between border-b-2 border-b-[#C4C4C4]">
+            <p>Brand</p>
+            <p>Design PRP</p>
+        </div>
+
+        <div class="flex pt-2 justify-between border-b-2 border-b-[#C4C4C4]">
+            <p>Country</p>
+            <p>{{ product.country }}</p>
+        </div>
+        </div>
+
+        
+        </div>  
+
+        <div class="w-6/12  py-12 flex flex-col gap-2">
+            <p class="text-[#02886B] font-[avenir-bold] text-4xl">{{ product.price }}</p>
+
+            
+  <p class="w-11/12 text-justify font-[avenir]">Natural materials combine with a sculptural silhouette for an irresistible fusion of form and function. This gorgeous Weave solid wood chair Features: an artfully tapered frame complete with a contrasting rope woven seat that will keep you sitting comfortably for hours on end.</p>
+
+
+  <div class="w-full flex my-8 gap-2">
+    <button class="py-2 px-8 bg-[#02886B] border-none - outline-none text-white " @click="addToCart">Add To Cart</button>
+    <button class="bg-black py-4 px-5"><img src="../assets/images/star.svg"/></button>
+  </div>
+        </div>
+
+       
+        
+
+</div>
+<div class="w-full  flex flex-col">
+    <h2 class="py-4 text-3xl font-[avenir-bold]">You might like</h2>
+
+    <div class="w-full flex gap-8">
+            <ProductCard :product="product" v-for="product in ItemStore.bestSellers.slice(0,4)"/>
+          </div> 
+    
+</div>
+
+</div>
+</div>
+</MainLayout>
     </div>
+    
 </template>
 
 <script setup lang="ts">
-import Navbar from '@/components/Navbar.vue';
-import MainLayout from '@/layouts/MainLayout.vue';
 import { onMounted,ref, watchEffect } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
-import useProductStore from '../stores/ProductStore'
+import useProductStore from '@/stores/ProductStore';
+import useItemStore from '@/stores/ItemStore';
+import Navbar from '@/components/Navbar.vue';
+import MainLayout from '@/layouts/MainLayout.vue';
+import ProductCard from '@/components/ProductCard.vue';
+import useCartStore from '@/stores/CartStore';
+
 const ProductStore = useProductStore()
+const ItemStore = useItemStore()
 const route = useRoute();
 const router = useRouter();
 
-// interface Product {
-// id:number,
-// image:string,
-// name:string,
-// price:string,
-// category:string,
-// type:string,
-// size:string,
-// material:string,
-// country:string,
-// productCode:number,
-// large:boolean
-// slug:string
-// }
-
-
-// let product = ref<Product>()
-
-// watchEffect(() => {
-//     const id = route.params.id as any
-  
-
-//     product.value = ProductStore.productById(id)
-
-
-//     console.log(product.value)
-// })
-
-
 let product = ref()
+let reviews = ref( Math.floor(Math.random() * 15)+ 4)
+let numberOfTimesBought = ref( Math.floor(Math.random() * 30) +5)
+const CartStore = useCartStore()
+
+console.log(reviews)
+
 
 watchEffect(() => {
     const id = route.params.id as any
-    console.log(id)
-    product.value = ProductStore.getSingleProduct(id)
+    console.log(typeof(id))
 
-    console.log(product.value[0].name)
+    product.value = ItemStore.productById(id)
+
+   
+
+
+    console.log(product.value)
+
+    
+    // console.log(ProductStore.singleProduct(id))
 
 })
 
-const convertedPrice = product.value[0].price.toString().slice(0,3)
+
+onMounted(() => {
+    let page:any = document.querySelector('#page')
+    setTimeout(() => {
+        page.scrollIntoView({
+          behavior: 'smooth'
+    })
+    },200)
+  
+})
+
+
+const addToCart = () => {
+    CartStore.addItemToCart(product.value.id, 1)
+}
+
+
+
 
 
 </script>
 
 <style scoped>
 .bg{
-    background-size: cover;
-    background-position: center;
     background-repeat: no-repeat;
+    background-position: center;
+    background-size:contain;
 }
+
+
+
 </style>
