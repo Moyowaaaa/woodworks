@@ -141,9 +141,7 @@ watchEffect(() => {
 onMounted(() => {
     let page:any = document.querySelector('#page')
     setTimeout(() => {
-        page.scrollIntoView({
-          behavior: 'smooth'
-    })
+        page.scrollIntoView()
     },200)
   
 })

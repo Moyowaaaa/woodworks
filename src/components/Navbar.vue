@@ -50,7 +50,7 @@ const CartStore = useCartStore()
                 <img src="../assets/images/cart.svg" class="w-[1rem]"/>
 
                 <div class="absolute top-2  ml-6 text-white bg-[#57A695] px-1 rounded-full text-xs">
-                    {{ CartStore.itemsInCart }}
+                    {{ CartStore.numberOfItems }}
                 </div>
             </div>
             </router-link>
