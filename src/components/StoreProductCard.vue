@@ -1,6 +1,6 @@
 <template>
 
-    <div class="card  min-h-[25rem]  h-auto flex flex-col bg-white  grid  row-span-4 rounded-lg flex flex-col " :class="[product.large ? 'col-span-2' : 'col-span-1' ]"   >
+    <div class="card  min-h-[25rem]  h-auto flex flex-col bg-white  grid  row-span-4 rounded-lg flex flex-col " :class="[product.large ? 'col-span-2' : 'col-span-2 lg:col-span-1' ]"   >
         <RouterLink :to="('item/' + product.id)">
             
         <div class= "bg w-full flex flex-col "  :class="[product.large ? 'h-full object-contain' : 'h-[19rem] relative justify-center items-center' ]" :style="{ backgroundImage: `url('${product.image}')` }">
@@ -23,7 +23,7 @@
             <p>{{ product.name }}</p>
         </div> -->
         <div class=" flex flex-col px-4 font-[avenir]" :class="[product.large ? 'hidden':'h-[6rem] ']">
-            <div>{{ product.name }} <br/> {{ product.productCode }}</div>
+            <div class="text-sm lg:text-base">{{ product.name }} <br/> {{ product.productCode }}</div>
 
 
 
@@ -57,5 +57,11 @@ defineProps(['product'])
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+}
+
+@media screen and (max-width:485px) {
+    .bg{
+        background-size:80%;
+    }
 }
 </style>

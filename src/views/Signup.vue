@@ -1,10 +1,10 @@
 <template>
     <div class="min-h-screen flex">
-        <div class="auth-bg w-6/12 flex flex-col pl-20 pt-12">
+        <div class="auth-bg w-6/12 hidden lg:flex flex-col pl-20 pt-12">
             <img src="../assets/images/logo.svg" class="w-[10rem]" />
         </div>
 
-        <div class="w-6/12 flex flex-col items-center">
+        <div class="w-full lg:w-6/12 flex flex-col items-center">
             <SignupForm />
         </div>
     </div>

@@ -23,18 +23,18 @@ const stats = [
 </script>
 
 <template>
-    <div class=" min-h-screen flex flex-col w-10/12 mx-auto 
+    <div class=" min-h-screen flex flex-col w-11/12 lg:w-10/12 mx-auto 
      h-auto">
         <div class=" mb-[12rem]">
             <h1 class="font-[avenir-bold] text-[#005454] text-xl pt-8 pb-6">Best Sellers</h1>
             
-          <div class="w-full flex gap-8">
+          <div class="best w-full flex gap-8 ">
             <ProductCard :product="product" v-for="product in ItemStore.bestSellers"/>
           </div> 
       
         </div>
 
-        <div class="w-full  min-h-screen flex justify-center mb-[12rem] ">
+        <div class="hidden w-full  min-h-screen lg:flex justify-center mb-[12rem] ">
             <div class="w-6/12  flex flex-col">
                     <div class="bg-[#EAF3F3] py-24 flex flex-col  items-center" >
                         <div class="w-9/12">
@@ -60,13 +60,7 @@ comes in, to offer you the very best.
                             <p class="w-[8rem]">{{ stat.title }}</p>
                         </div>
                         </div>
-                        <!-- <div class="w-full gap-4" v-for="stat in stats">
-                            <div class="flex flex-col ">
-                            <h2 class="text-[#005454] text-4xl font-[avenir-bold]">{{ stat.count }}</h2>
-                            <p class="w-[8rem]">{{ stat.title }}</p>
-                        </div>
-                        </div> -->
-                       
+              
                     </div>
             </div>
 
@@ -84,5 +78,12 @@ comes in, to offer you the very best.
     background-image: url('/images/statsBg.png');
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+@media screen and (max-width:485px) {
+    .best{
+        flex-direction: column;
+        align-items: center;
+    }
 }
 </style>

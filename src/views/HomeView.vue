@@ -10,12 +10,12 @@ import Collection from '@/components/Collection.vue';
 <template>
   <div>
       <TitleSection />
-      <MainLayout>
-        <BestSellers />
+     <MainLayout>
+        <BestSellers /> 
         <Collection />
         <SubscribeSection />
     
-    </MainLayout>
+    </MainLayout> 
   </div>
 </template>
 

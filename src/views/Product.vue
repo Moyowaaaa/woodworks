@@ -2,15 +2,15 @@
     <div class="flex flex-col">
         <Navbar />
 <MainLayout >
-        <div class="flex flex-col px-10 py-10" id="page">
+        <div class="flex flex-col lg:px-10 py-10" id="page">
 
 <div class="flex flex-col gap-2 mt-8" id="page">
     
-    <div class="link flex items-center w-max" @click="router.back()"> <img src="../assets/images/rightArrow.svg" class="w-[30px]"/> Back</div>
-<div class="flex items-center gap-2 font-[avenir-medium]">
+    <div class="link flex flex-col lg:flex-row items-center w-max" @click="router.back()"> <img src="../assets/images/rightArrow.svg" class="w-[30px]"/> Back</div>
+<div class="flex  items-center gap-2 font-[avenir-medium]">
     <p>Catalog /</p>  <p> {{ product?.type }}s / </p> <p class="font-[avenir-bold]">{{ product?.name }}</p></div>
 <h1 class="text-4xl text-[#02886B] font-medium">{{ product?.name }}</h1>
-<div class="flex gap-6 font-[avenir-medium] font-medium">
+<div class="flex flex-col lg:flex-row gap-2 lg:gap-6 font-[avenir-medium] font-medium">
     <p>Product Code: {{ product?.productCode }}</p>
 
     <p>{{ reviews }} Reviews</p>
@@ -22,8 +22,8 @@
 
 </div>
 
-<div class="w-10/12 mx-auto flex gap-6">
-    <div class="w-6/12 flex flex-col items-center py-8 gap-6 ">
+<div class="w-full lg:w-10/12 mx-auto flex flex-col lg:flex-row gap-6">
+    <div class="w-full lg:w-6/12 flex flex-col items-center py-8 gap-6 ">
 
         <div class="bg w-full  rounded-lg h-[25rem]" :style="{ backgroundImage: `url('${product?.Limage}')` }" :class="[product.large === true ? 'bg-transparent' : 'bg-white']"></div>
 
@@ -65,11 +65,11 @@
         
         </div>  
 
-        <div class="w-6/12  py-12 flex flex-col gap-2">
+        <div class="w-full lg:w-6/12  py-12 flex flex-col gap-2">
             <p class="text-[#02886B] font-[avenir-bold] text-4xl">{{ product.price }}</p>
 
             
-  <p class="w-11/12 text-justify font-[avenir]">Natural materials combine with a sculptural silhouette for an irresistible fusion of form and function. This gorgeous Weave solid wood chair Features: an artfully tapered frame complete with a contrasting rope woven seat that will keep you sitting comfortably for hours on end.</p>
+  <p class="w-full lg:w-11/12 text-justify font-[avenir]">Natural materials combine with a sculptural silhouette for an irresistible fusion of form and function. This gorgeous Weave solid wood chair Features: an artfully tapered frame complete with a contrasting rope woven seat that will keep you sitting comfortably for hours on end.</p>
 
 
   <div class="w-full flex my-8 gap-2">
@@ -85,7 +85,7 @@
 <div class="w-full  flex flex-col">
     <h2 class="py-4 text-3xl font-[avenir-bold]">You might like</h2>
 
-    <div class="w-full flex gap-8">
+    <div class="w-full flex gap-8 overflow-x-scroll lg:overflow-x-hidden">
             <ProductCard :product="product" v-for="product in ItemStore.bestSellers.slice(0,4)"/>
           </div> 
     

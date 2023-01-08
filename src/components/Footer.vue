@@ -11,19 +11,19 @@ onMounted(()=> {
 </script>
 
 <template>
-    <div class="w-full border-t-2 border-[#C4C4C4] py-3 px-[4rem] ">
-        <div class="flex justify-between items-center text-[#5B5B5B] w-10/12 mx-auto">
-            <div class="flex flex-col gap-2">
+    <div class="flex w-full border-t-2 border-[#C4C4C4] py-3 lg:px-[4rem] mt-0 lg:mt-12">
+        <div class="flex flex-col lg:flex-row justify-between lg:items-center text-[#5B5B5B] w-10/12 mx-auto gap-4 lg:gap-0">
+            <div class="flex flex-col gap-2 items-center lg:items-start">
             <img src="../assets/images/logo.svg" class="w-[10rem]"/>
-            <p class="text-sm font-[avenir-light] text-center">modern & minimalistic</p>
+            <p class="text-sm font-[avenir-light] lg:text-center">modern & minimalistic</p>
         </div>
 
-        <div class="flex items-center h-full">
+        <div class="text-sm lg:text-base flex items-center h-full items-center">
             &copy;
             <span>{{ year }}</span>&nbsp; Modern & Minimalistic Furniture
         </div>
 
-        <div class="flex gap-2 items-center">
+        <div class="flex gap-2 items-center justify-center lg:justify-start">
             <div class="p-2 w-max bg-[#DCEBEB] rounded-full flex items-center justify-center">
                 <img src="../assets/images/twitter.svg" />
             </div>

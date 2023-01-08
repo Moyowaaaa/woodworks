@@ -1,23 +1,23 @@
 <template>
-    <div class="title-section min-h-screen  w-full h-screen">
+    <div class="title-section  min-h-screen w-full lg:w-full lg:h-screen ">
         <Navbar />
 
-        <div class="absolute top-0  w-full h-full mb-8 flex flex-col justify-center px-10">
+        <div class="lg:absolute top-0  w-full h-full mb-8 flex flex-col justify-center lg:px-10">
             <div class="flex gap-8">
 
-                <div class="flex flex-col gap-2 w-max ">
+                <div class="hidden lg:flex flex-col gap-2 w-full lg:w-max ">
                     <img src="../assets/images/tealDash.svg" />
                     <img src="../assets/images/blackDash.svg" />
                     <img src="../assets/images/tealDash.svg" />
                 </div>
 
-                <div class="flex flex-col gap-2">
-                    <p class="text-lg font-[avenir]">MODERN & MINIMALISTIC</p>
-                    <h1 class="text-6xl font-[avenir-bold]" >FIND YOUR <br/> PERFECT FURNITURE</h1>
-                    <p class="font-[avenir-medium] w-[35rem]">Nothing beats finding the perfect furniture for your home, office,
+                <div class="flex flex-col gap-2 w-full  h-screen justify-center lg:h-auto px-4 lg:px-0">
+                    <p class="text-base lg:text-lg font-[avenir]">MODERN & MINIMALISTIC</p>
+                    <h1 class="text-5xl lg:text-6xl font-[avenir-bold]" >FIND YOUR <br/> PERFECT FURNITURE</h1>
+                    <p class="font-[avenir-medium] w-[16rem] lg:w-[35rem] text-sm lg:text-base">Nothing beats finding the perfect furniture for your home, office,
 resturants & parks. 
 </p>
-<p class="font-[avenir-medium] w-[35rem]">
+<p class="text-sm lg:text-base font-[avenir-medium] w-[16rem] lg:w-[35rem]">
     Your home should be a story of who you are, and be a collection
 of what you love.” – Nate Berkus . 
 
@@ -26,7 +26,7 @@ of what you love.” – Nate Berkus .
 
 
 <router-link to="/catalog" >
-<div class=" flex gap-2 items-center font-[avenir-medium] pt-12">
+<div class=" flex gap-2 items-center font-[avenir-medium] pt-12 w-max ">
     <p class="link">View Catalog</p> <img src="../assets/images/leftArrow.svg" />
 </div>
 </router-link>  
@@ -66,5 +66,11 @@ display: inline-block;
 .link:hover {
   background-position: 100% 100%; 
   background-size: 100% 2px;
+}
+
+@media screen and (max-width:485px) {
+    .title-section {
+        background:none;
+    }
 }
 </style>
