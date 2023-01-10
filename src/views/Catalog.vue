@@ -98,7 +98,7 @@ import Footer from '@/components/Footer.vue';
 import useProductStore from '@/stores/ProductStore';
 import StoreProductCard from '../components/StoreProductCard.vue'
 import useItemStore from '@/stores/ItemStore';
-import ItemCard from './ItemCard.vue'
+
 
 
 const ProductStore = useProductStore()

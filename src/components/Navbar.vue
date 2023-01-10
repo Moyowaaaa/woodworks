@@ -2,15 +2,8 @@
 // import {} from 'vue-router'
 import useCartStore from '@/stores/CartStore';
 import { onMounted,ref } from 'vue';
-
-
 let menu = ref<boolean>(false)
-
 const CartStore = useCartStore()
-
-
-
-        
 
     
        
@@ -59,7 +52,7 @@ const CartStore = useCartStore()
                 <img src="../assets/images/cart.svg" class="w-[1rem]"/>
 
                 <div class="absolute top-2  ml-6 text-white bg-[#57A695] px-1 rounded-full text-xs">
-                    {{ CartStore.numberOfItems }}
+                    {{ CartStore.itemsInCart }}
                 </div>
             </div>
             </router-link>
@@ -84,6 +77,8 @@ const CartStore = useCartStore()
       
 
         </div>
+
+      
     
     </div>
 </template>

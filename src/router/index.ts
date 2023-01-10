@@ -3,7 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import Signup from '../views/Signup.vue'
 import Catalog from '../views/Catalog.vue'
 import Product from '../views/Product.vue'
-import Item from '../views/Item.vue'
+
 import Cart from '../views/Cart.vue'
 
 const router = createRouter({
@@ -34,16 +34,6 @@ const router = createRouter({
       name: 'item-id',
       component: Product
     },
-    {
-      path: '/prod/:id',
-      name: 'prod-id',
-      component: Item
-    },
-    // {
-    //   path: '/item/:id',
-    //   name: 'item-id',
-    //   component: Product
-    // },
     {
       path: '/about',
       name: 'about',

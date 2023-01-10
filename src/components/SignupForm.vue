@@ -1,5 +1,5 @@
 <template>
-    <div class="w-7/12  pt-12 ">
+    <div class="w-10/12 lg:w-7/12  pt-12 ">
         <img src="../assets/images/logo.svg" class="w-[10rem]" />
         <div class="flex flex-col mt-12  w-full h-full">
             <h1 class="text-xl font-[avenir-bold]">REGISTRATION</h1>
@@ -39,7 +39,7 @@ class="bg-transparent border-b-2 border-b-[#C4C4C4] outline-none p-2"
 />
 </div>
 
-<button class="py-2 bg-[#57A695] text-white flex items-center justify-center w-8/12 rounded-md mx-auto my-6">Sign Up</button>
+<button class="py-2 bg-[#57A695] text-white flex items-center justify-center w-10/12 lg:w-8/12 rounded-md mx-auto my-6">Sign Up</button>
 
 
 </div>

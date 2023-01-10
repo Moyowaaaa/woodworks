@@ -108,6 +108,9 @@ import MainLayout from '@/layouts/MainLayout.vue';
 import ProductCard from '@/components/ProductCard.vue';
 import useCartStore from '@/stores/CartStore';
 
+
+
+
 const ProductStore = useProductStore()
 const ItemStore = useItemStore()
 const route = useRoute();
@@ -149,6 +152,7 @@ onMounted(() => {
 
 const addToCart = () => {
     CartStore.addItemToCart(product.value.id, 1)
+    // cart.addItemToCart(product)
 }
 
 

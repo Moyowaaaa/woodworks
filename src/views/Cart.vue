@@ -20,11 +20,7 @@
                         </div>
 
 
-                        {{ CartStore.numberOfItems }}
-
-                        <!-- {{ CartStore.productsInCart }} -->
-
-                        {{ CartStore.cart }}
+                     {{ CartStore.cart }}
                         
                     
 
@@ -34,7 +30,7 @@
                         <div class="flex justify-between">
                             <p class="text-[#02886B] font-[avenir-medium]">Your Cart</p>
 
-                            {{ CartStore.totalAmountOfProductsInCart }} items
+                            {{ CartStore.itemsInCart }} items
                         </div>
 
                             <div class="my-4 border-y-2 border-y-[#C4C4C4] py-4 flex justify-between">
@@ -66,8 +62,10 @@ import { onMounted } from 'vue';
 import useCartStore from '../stores/CartStore'
 
 
+
+
 const CartStore = useCartStore()
-CartStore.productsInCart
+
 
 </script>
 
