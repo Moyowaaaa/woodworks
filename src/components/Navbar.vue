@@ -6,6 +6,11 @@ let menu = ref<boolean>(false);
 const CartStore = useCartStore();
 
 const isScrolled = ref<boolean>(false)
+const isOpen = ref<boolean>(false)
+
+const toggleMenu = () => {
+  isOpen.value = !isOpen.value
+}
 
 const handleScroll = () => {
   if (window.scrollY > 0) {
@@ -25,7 +30,10 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div
+  <div class="flex flex-col w-full h-auto">
+
+
+    <div
     class="fixed z-30 w-full bg-none flex py-4 justify-between px-4 lg:px-0 lg:pr-10 lg:pl-24 items-center" :class="[isScrolled ? 'bg-white shadow-md' : '']"
   >
     <router-link to="/">
@@ -33,45 +41,7 @@ onUnmounted(() => {
     </router-link>
 
 
-    <!-- -----mobile  -->
-    <!-- <div class="fixed w-full border-2 border-[green] h-[102rem] -mx-4 lg:hidden  overflow-hidden  pt-[52.5rem]">
-      
-      <div class="h-full bg-white px-4 flex flex-col pt-6 font-[avenir-medium]">
-        <router-link to="/wishlist">
-          <div class="flex items-center gap-4">
-            <p>Wishlist</p>
-            <div
-            class="w-max p-2 rounded-md bg-[#57A695] flex items-center justify-center"
-          >
-            <img src="../assets/images/star.svg" class="w-[1rem]" />
-          </div>
-          </div>
-          
-        </router-link>
-
-
-
-        
-        <div class="flex  font-[avenir-medium] flex-col gap-6 h-full pt-6">
-        <router-link to="/">
-          <div><p class="link">Home</p></div>
-        </router-link>
-        <router-link to="/catalog"><p class="link">Catalog</p></router-link>
-
-        <a href="/#about">
-          <p>About Us</p>
-        </a>
-       
-        <a href="/#subscribe">
-          <p>Contact</p>
-        </a>
-       
-      </div>
-      </div>
-        
-      </div> -->
-
-      <!-- ---- -->
+   
 
     <div class="lg:hidden flex gap-2 items-center">
 
@@ -92,13 +62,22 @@ onUnmounted(() => {
           </div>
         </router-link>
 
-      <div class=" nav-button z-50">
+        <!-- -----mobile nav button  -->
+
+      <div class=" nav-button z-50" @click="toggleMenu" v-if="!isOpen">
       <svg viewBox="0 0 12 10" class="hamburger  w-[2rem] h-[2rem]" >
         <path d="M10,2 L2,2" class="bar1"></path>
         <path d="M2,5 L10,5" class="bar2"></path>
         <path d="M10,8 L2,8" class="bar3"></path>
       </svg>
     </div>
+
+    <div class="text-3xl  w-[2rem] h-[2rem]" v-if="isOpen" @click="toggleMenu">
+X
+    </div>
+<!-- --------- -->
+
+
     </div>
 
    
@@ -138,7 +117,7 @@ onUnmounted(() => {
             <div
               class="absolute top-2 ml-6 text-white bg-[#57A695] px-1 rounded-full text-xs"
             >
-              {{ CartStore.itemCount }}
+            {{ CartStore.itemsInCart }} 
             </div>
           </div>
         </router-link>
@@ -156,6 +135,84 @@ onUnmounted(() => {
     
     </div>
    
+  </div>
+
+
+
+<!-- ----- mobile Nnavbar---- -->
+  <div class="fixed z-50 bg-white w-full  h-screen mt-16 flex flex-col px-4 font-[avenir-medium] pt-6 ease-in-out duration-700 " :class="[isOpen ? 'translate-x-0':'translate-x-full']" @click="toggleMenu">
+    <router-link to="/wishlist">
+          <div class="flex items-center gap-4">
+            <p>Wishlist</p>
+            <div
+            class="w-max p-2 rounded-md bg-[#57A695] flex items-center justify-center"
+          >
+            <img src="../assets/images/star.svg" class="w-[1rem]" />
+          </div>
+          </div>
+          
+        </router-link>
+
+        <div class="flex   flex-col gap-6 h-full pt-6">
+        <router-link to="/">
+          <div><p class="link">Home</p></div>
+        </router-link>
+        <router-link to="/catalog"><p class="link">Catalog</p></router-link>
+
+        <a href="/#about">
+          <p>About Us</p>
+        </a>
+       
+        <a href="/#subscribe">
+          <p>Contact</p>
+        </a>
+       
+      </div>
+
+
+
+  </div>
+
+   <!-- -----mobile  -->
+    <!-- <div class="fixed w-full border-2 border-[green] h-[102rem] -mx-4 lg:hidden  overflow-hidden  pt-[52.5rem]">
+      
+      <div class="h-full bg-white px-4 flex flex-col pt-6 font-[avenir-medium]">
+        <router-link to="/wishlist">
+          <div class="flex items-center gap-4">
+            <p>Wishlist</p>
+            <div
+            class="w-max p-2 rounded-md bg-[#57A695] flex items-center justify-center"
+          >
+            <img src="../assets/images/star.svg" class="w-[1rem]" />
+          </div>
+          </div>
+          
+        </router-link>
+
+
+
+        
+        <div class="flex  font-[avenir-medium] flex-col gap-6 h-full pt-6">
+        <router-link to="/">
+          <div><p class="link">Home</p></div>
+        </router-link>
+        <router-link to="/catalog"><p class="link">Catalog</p></router-link>
+
+        <a href="/#about">
+          <p>About Us</p>
+        </a>
+       
+        <a href="/#subscribe">
+          <p>Contact</p>
+        </a>
+       
+      </div>
+      </div>
+        
+      </div> -->
+
+      <!-- ---- -->
+ 
   </div>
 </template>
 

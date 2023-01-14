@@ -83,10 +83,13 @@ const useCartStore = defineStore('cart', {
             
         },
         decreaseItem(id:number) {
-            const ItemId  = this.cart.find((item) => item.id === (+id))
-            if(ItemId) {
-                ItemId.quantity --
+            const ItemId = this.cart.find((item) => item.id === (+id));
+        if (ItemId) {
+            ItemId.quantity--;
+            if (ItemId.quantity <= 0) {
+                this.removeItemFromCart(id);
             }
+        }
         },
 
         removeItemFromCart(id:number) {

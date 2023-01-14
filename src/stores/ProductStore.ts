@@ -19,7 +19,7 @@ const useProductStore = defineStore('ProductStore', {
                     large:true,
                     slug:'black-volar',
                     Limage:'/images/blackValorSofa.png',
-                 
+                    notLarge:true,
                    
 
                 },
@@ -278,6 +278,7 @@ const useProductStore = defineStore('ProductStore', {
                     large:true,
                     slug:'dark-grey',
                     Limage:'/images/darkGreyNolanSofaa.png',
+                   
                     
                 },
               

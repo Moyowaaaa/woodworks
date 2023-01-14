@@ -12,7 +12,7 @@
             <div class="min-h-screen flex flex-col mt-12">
 
 
-                <div class="flex items-center text-[#57A695] text-sm">
+                <div class="flex items-center text-[#57A695] text-sm pt-6">
                             <p class="font-[avenir-light]">Categories /</p>
                             <p class="font-[avenir-medium]">Shopping Cart</p>
                         </div>
@@ -43,12 +43,12 @@
                         <div class="flex justify-between">
                             <p class="text-[#02886B] font-[avenir-medium]">Your Cart</p>
 
-                            {{ CartStore.itemsInCart }} items
+                          <div class="items-center flex gap-1">  {{ CartStore.itemsInCart }} <p>Item<span v-if="CartStore.itemsInCart > 1">s</span></p> </div>    
                         </div>
 
                             <div class="my-4 border-y-2 border-y-[#C4C4C4] py-4 flex justify-between">
                                 <p>Subtotal</p>
-                                <p>N155K</p>
+                                <p>N{{ CartStore.totalAmountOfItemInCart}}K</p>
                             </div>
 
                             <div class="flex justify-between text-[#02886B] text-lg font-[avenir-medium]">

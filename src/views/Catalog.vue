@@ -43,14 +43,13 @@
 import Navbar from '@/components/Navbar.vue';
 import MainLayout from '@/layouts/MainLayout.vue';
 import Footer from '@/components/Footer.vue';
-import useProductStore from '@/stores/ProductStore';
+
 import StoreProductCard from '../components/StoreProductCard.vue'
-import useItemStore from '@/stores/ItemStore';
+import useProductStore from '@/stores/ProductStore';
 import { storeToRefs } from 'pinia';
 
 
 const ProductStore = useProductStore()
-const ItemStore = useItemStore()
 const {products} = storeToRefs(ProductStore)
 
 

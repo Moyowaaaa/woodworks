@@ -1,6 +1,8 @@
 <template>
     <div class="w-10/12 lg:w-7/12  pt-12 ">
-        <img src="../assets/images/logo.svg" class="w-[10rem]" />
+        <div class="link flex flex-col lg:flex-row items-center w-max" @click="router.back()"> <img src="../assets/images/rightArrow.svg" class="w-[30px]"/> Back</div>
+
+        <img src="../assets/images/logo.svg" class="w-[10rem] pt-6" />
         <div class="flex flex-col mt-12  w-full h-full">
             <h1 class="text-xl font-[avenir-bold]">REGISTRATION</h1>
             <div class="h-4/5 flex flex-col justify-center ">
@@ -52,6 +54,10 @@ class="bg-transparent border-b-2 border-b-[#C4C4C4] outline-none p-2"
 </template>
 
 <script setup lang="ts">
+
+import { useRoute, useRouter } from 'vue-router';
+const route = useRoute();
+const router = useRouter();
 
 </script>
 

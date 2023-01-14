@@ -66,15 +66,15 @@
         </div>  
 
         <div class="w-full lg:w-6/12  py-12 flex flex-col gap-2">
-            <p class="text-[#02886B] font-[avenir-bold] text-4xl">{{ product.price }}</p>
+            <p class="text-[#02886B] font-[avenir-bold] text-4xl">N{{ product.price }}K</p>
 
             
   <p class="w-full lg:w-11/12 text-justify font-[avenir]">Natural materials combine with a sculptural silhouette for an irresistible fusion of form and function. This gorgeous Weave solid wood chair Features: an artfully tapered frame complete with a contrasting rope woven seat that will keep you sitting comfortably for hours on end.</p>
 
 
   <div class="w-full flex my-8 gap-2">
-    <button class="py-2 px-8 bg-[#02886B] border-none - outline-none text-white " @click="addToCart">Add To Cart</button>
-    <button class="bg-black py-4 px-5"><img src="../assets/images/star.svg"/></button>
+    <button class="py-4 px-8 bg-[#02886B] border-none - outline-none text-white " @click="addToCart">Add To Cart</button>
+    <!-- <button class="bg-black py-4 px-5"><img src="../assets/images/star.svg"/></button> -->
   </div>
         </div>
 
@@ -86,7 +86,7 @@
     <h2 class="py-4 text-3xl font-[avenir-bold]">You might like</h2>
 
     <div class="w-full flex gap-8 overflow-x-scroll lg:overflow-x-hidden" @click="scrollTop">
-            <ProductCard :product="product" v-for="product in ItemStore.bestSellers.slice(0,4)"/>
+            <ProductCard :product="product" v-for="product in ProductStore.bestSellers.slice(0,4)"/>
           </div> 
     
 </div>
@@ -102,7 +102,6 @@
 import { onMounted,ref, watchEffect } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import useProductStore from '@/stores/ProductStore';
-import useItemStore from '@/stores/ItemStore';
 import Navbar from '@/components/Navbar.vue';
 import MainLayout from '@/layouts/MainLayout.vue';
 import ProductCard from '@/components/ProductCard.vue';
@@ -112,7 +111,7 @@ import { storeToRefs } from 'pinia';
 
 
 const ProductStore = useProductStore()
-const ItemStore = useItemStore()
+
 const route = useRoute();
 const router = useRouter();
 let reviews = ref( Math.floor(Math.random() * 15)+ 4)
@@ -127,7 +126,7 @@ watchEffect(() => {
     const id = route.params.id as any
   
 
-    product.value = ItemStore.productById(id)
+    product.value = ProductStore.productById(id)
 })
 
 

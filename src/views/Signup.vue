@@ -9,6 +9,7 @@
 
 
     <div class="w-full lg:w-6/12 flex flex-col items-center">
+      
       <SignupForm />
     </div>
   </div>
@@ -16,6 +17,7 @@
 
 <script setup lang="ts">
 import SignupForm from "@/components/SignupForm.vue";
+
 </script>
 
 <style scoped>

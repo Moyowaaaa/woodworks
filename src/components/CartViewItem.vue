@@ -1,8 +1,8 @@
 <template>
       <div class="w-full lg:w-11/12  flex flex-col lg:flex-row py-4 border-t-2 border-t-[#C4C4C4]" >
-                        <div class="w-full lg:w-8/12 " @click="viewProduct(cartItem.id)">
+                        <div class="w-full lg:w-8/12 cursor-pointer" @click="viewProduct(cartItem.id)">
                             <div class="flex flex-col lg:flex-row items-center gap-6 h-[18rem] py-6 lg:py-0">
-                                <div class="image h-4/5  bg-white rounded-md w-11/12 lg:w-4/12" :style="{ backgroundImage: `url('${cartItem.image}')` }"></div>
+                                <div class="image  rounded-md w-11/12 lg:w-4/12" :class="[cartItem.large? 'bg-none h-full' : 'bg-white  h-4/5 ']"   :style="{ backgroundImage: `url('${cartItem.image}')` }"></div>
 
                                 <div>
                                     <h2 class="font-[avenir-medium] text-lg">{{ cartItem.name }}</h2>
@@ -12,7 +12,7 @@
                             </div>
                         </div>
                         <div class="w-full lg:w-2/12 flex items-center justify-center flex-col">
-                            <div class="flex items-center gap-4 ">
+                            <div class="flex items-center gap-4 cursor-pointer text-xl">
                                 <p @click="CartStore.decreaseItem(cartItem.id)">-</p>    
                                 
                                 {{ cartItem.quantity }} 

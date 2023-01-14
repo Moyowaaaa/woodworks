@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import ProductCard from './ProductCard.vue';
-import useItemStore from '@/stores/ItemStore';
+import useProductStore from '@/stores/ProductStore';
 
-const ItemStore = useItemStore()
-console.log(ItemStore.bestSellers)
+const ProductStore = useProductStore()
+console.log(ProductStore.bestSellers)
 
 const stats = [
     {
@@ -29,7 +29,7 @@ const stats = [
             <h1 class="font-[avenir-bold] text-[#005454] text-xl pt-8 pb-6">Best Sellers</h1>
             
           <div class="best w-full flex gap-8 ">
-            <ProductCard :product="product" v-for="product in ItemStore.bestSellers"/>
+            <ProductCard :product="product" v-for="product in ProductStore.bestSellers"/>
           </div> 
       
         </div>
