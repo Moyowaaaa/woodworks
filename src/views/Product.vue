@@ -110,30 +110,28 @@ import useCartStore from '@/stores/CartStore';
 
 
 
-
 const ProductStore = useProductStore()
 const ItemStore = useItemStore()
 const route = useRoute();
 const router = useRouter();
-
-let product = ref()
 let reviews = ref( Math.floor(Math.random() * 15)+ 4)
 let numberOfTimesBought = ref( Math.floor(Math.random() * 30) +5)
 const CartStore = useCartStore()
 
-console.log(reviews)
 
+
+let product = ref()
 
 watchEffect(() => {
     const id = route.params.id as any
-    console.log(typeof(id))
+  
 
     product.value = ItemStore.productById(id)
 
    
 
 
-    console.log(product.value)
+
 
     
     // console.log(ProductStore.singleProduct(id))

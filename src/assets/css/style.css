@@ -61,7 +61,10 @@ html, #app {
     background-position: 100% 100%; 
     background-size: 100% 2px;
   }
-  .link a.router-link-active{
-      color:#F6FF82
+
+  .links a.router-link-active{
+    font-weight: 700;
+    border-bottom: 2px solid #02886B;
+    color:#02886B
   }
   

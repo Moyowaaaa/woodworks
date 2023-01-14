@@ -92,6 +92,7 @@
 
 <script setup lang="ts">
 import Navbar from '@/components/Navbar.vue';
+import CatalogNavbar from '@/components/CatalogNavbar.vue';
 import TestCard from '@/components/TestCard.vue';
 import MainLayout from '@/layouts/MainLayout.vue';
 import Footer from '@/components/Footer.vue';

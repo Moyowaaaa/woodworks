@@ -1,25 +1,27 @@
 <template>
-    <div class="min-h-screen flex">
-        <div class="auth-bg w-6/12 hidden lg:flex flex-col pl-20 pt-12">
-            <img src="../assets/images/logo.svg" class="w-[10rem]" />
-        </div>
+  <div class="min-h-screen flex">
+   
+      <div class="auth-bg w-6/12 hidden lg:flex flex-col pl-20 pt-12">
+        <router-link to="/">
+        <img src="../assets/images/logo.svg" class="w-[10rem]" />
+    </router-link>
+      </div>
 
-        <div class="w-full lg:w-6/12 flex flex-col items-center">
-            <SignupForm />
-        </div>
+
+    <div class="w-full lg:w-6/12 flex flex-col items-center">
+      <SignupForm />
     </div>
+  </div>
 </template>
 
 <script setup lang="ts">
-import SignupForm from '@/components/SignupForm.vue';
-
-
+import SignupForm from "@/components/SignupForm.vue";
 </script>
 
 <style scoped>
-.auth-bg{
-    background-image: url('/images/statsBg.png');
-    background-size: contain;
-    background-repeat: no-repeat;
+.auth-bg {
+  background-image: url("/images/statsBg.png");
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 </style>

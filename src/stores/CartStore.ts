@@ -21,7 +21,8 @@ interface Product extends Item {
     productCode:number
     large:boolean
     slug:string
-    Limage:string
+    Limage:string,
+    quantity:number
 }
 
 const useCartStore = defineStore('cart', {
@@ -29,13 +30,47 @@ const useCartStore = defineStore('cart', {
         cart:[] as Item[]
     }),
     getters: {
-        itemsInCart:(state) => {
-          return state.cart.length
+        productsInCart: (state) => {
+            const ProductStore = useProductStore();
+            let cartProducts: Product[] = [];
+            state.cart.forEach((item) => {
+                const product:any = ProductStore.products.find((product) => product.id === item.id);
+                if (product) {
+                    cartProducts.push({...product, ...item});
+                }
+            });
+            return cartProducts;
         },
-    
+        itemCount():number {
+            return this.cart.length
+        },
+        itemsInCart:(state):number => {
+            return state.cart.reduce((total, item) => {
+                return total + item.quantity;
+            }, 0);
+        },
+
+
+        totalAmountOfItemInCart:(state) => {
+            const ProductStore = useProductStore();
+    return state.cart.reduce((total, item) => {
+        const product = ProductStore.products.find((p) => p.id === item.id);
+        if (product) {
+            const productPrice = parseFloat(product.price);
+            if (!isNaN(productPrice)) {
+                return total + (productPrice * item.quantity);
+            } else {
+                console.log("Invalid price for product with id: " + product.id);
+            }
+        }
+        return total;
+    }, 0);
+        }
+
+        
     },
     actions: {
-        addItemToCart(id:number, quantity=1) {
+        addItemToCart(id:number, quantity:number=1) {
             const ItemId = this.cart.find((product:Item) => product.id === (+id))
             if(ItemId) {
                 ItemId.quantity ++
@@ -49,6 +84,7 @@ const useCartStore = defineStore('cart', {
             if(ItemId) {
                 ItemId.quantity ++
             }
+            
         },
         decreaseItem(id:number) {
             const ItemId  = this.cart.find((item) => item.id === (+id))
@@ -58,8 +94,9 @@ const useCartStore = defineStore('cart', {
         },
 
         removeItemFromCart(id:number) {
-            this.cart = this.cart.filter((item) => item.id ! == (+id))
+            this.cart = this.cart.filter((item) => item.id !== (+id))
         }
+        
         
     }
 
