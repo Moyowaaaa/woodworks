@@ -63,21 +63,7 @@
       
 
     </div>
-    <!-- <div class="min-h-screen h-auto w-10/12 mx-auto border-2 border-[red] grid grid-cols-4 grid-rows-6 auto-cols-fr">
-       
-  <div class="bg-[green] row-span-4 sofa">01</div>
-  <div class=" grid col-span-2 row-span-4">
-    <div class="bg-[purple] grid">
-        <div class="bg-[orange] row-span-2"></div>
-        <div class="bg-[black] col-span-2"></div>
-    </div>
-
-    <div class="bg-[yellow] row-span-1"></div>
-    </div>
-  <div class="bg-[teal] row-span-4">01</div>
-  <div class="bg-[blue] col-span-4 row-span-3 ">01</div>
-  
-  </div>     -->
+ 
     
 </template>
 

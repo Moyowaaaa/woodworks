@@ -1,31 +1,107 @@
 <script setup lang="ts">
 // import {} from 'vue-router'
 import useCartStore from "@/stores/CartStore";
-import { onMounted, ref,watchEffect } from "vue";
+import { onMounted, ref,watchEffect, onUnmounted } from "vue";
 let menu = ref<boolean>(false);
 const CartStore = useCartStore();
 
-watchEffect(() => {
-    window.screenY
-    console.log(window.scrollY)
+const isScrolled = ref<boolean>(false)
+
+const handleScroll = () => {
+  if (window.scrollY > 0) {
+        isScrolled.value = true;
+      } else {
+        isScrolled.value = false;
+      }
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll);
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll);
 })
 </script>
 
 <template>
   <div
-    class="fixed z-30 w-full bg-none flex py-4 justify-between px-4 lg:px-0 lg:pr-10 lg:pl-24 items-center"
+    class="fixed z-30 w-full bg-none flex py-4 justify-between px-4 lg:px-0 lg:pr-10 lg:pl-24 items-center" :class="[isScrolled ? 'bg-white shadow-md' : '']"
   >
     <router-link to="/">
-      <img src="../assets/images/logo.svg" class="w-[10rem]" />
+      <img src="../assets/images/logo.svg" class="w-[8rem] lg:w-[10rem]" />
     </router-link>
 
-    <div class="lg:hidden nav-button z-50">
-      <svg viewBox="0 0 12 10" class="hamburger" height="40px" width="40px">
+
+    <!-- -----mobile  -->
+    <!-- <div class="fixed w-full border-2 border-[green] h-[102rem] -mx-4 lg:hidden  overflow-hidden  pt-[52.5rem]">
+      
+      <div class="h-full bg-white px-4 flex flex-col pt-6 font-[avenir-medium]">
+        <router-link to="/wishlist">
+          <div class="flex items-center gap-4">
+            <p>Wishlist</p>
+            <div
+            class="w-max p-2 rounded-md bg-[#57A695] flex items-center justify-center"
+          >
+            <img src="../assets/images/star.svg" class="w-[1rem]" />
+          </div>
+          </div>
+          
+        </router-link>
+
+
+
+        
+        <div class="flex  font-[avenir-medium] flex-col gap-6 h-full pt-6">
+        <router-link to="/">
+          <div><p class="link">Home</p></div>
+        </router-link>
+        <router-link to="/catalog"><p class="link">Catalog</p></router-link>
+
+        <a href="/#about">
+          <p>About Us</p>
+        </a>
+       
+        <a href="/#subscribe">
+          <p>Contact</p>
+        </a>
+       
+      </div>
+      </div>
+        
+      </div> -->
+
+      <!-- ---- -->
+
+    <div class="lg:hidden flex gap-2 items-center">
+
+      
+
+
+      <router-link to="/cart">
+          <div
+            class="w-max p-2 rounded-md bg-black flex items-center justify-center"
+          >
+            <img src="../assets/images/cart.svg" class="w-[1rem]" />
+
+            <div
+              class="absolute top-2 ml-6 text-white bg-[#57A695] px-1 rounded-full text-xs"
+            >
+              {{ CartStore.itemCount }}
+            </div>
+          </div>
+        </router-link>
+
+      <div class=" nav-button z-50">
+      <svg viewBox="0 0 12 10" class="hamburger  w-[2rem] h-[2rem]" >
         <path d="M10,2 L2,2" class="bar1"></path>
         <path d="M2,5 L10,5" class="bar2"></path>
         <path d="M10,8 L2,8" class="bar3"></path>
       </svg>
     </div>
+    </div>
+
+   
 
     <div class="links hidden lg:flex items-center w-[45rem] justify-between">
       <div class="flex gap-4 items-center font-[avenir-medium]">
@@ -33,8 +109,15 @@ watchEffect(() => {
           <div><p class="link">Home</p></div>
         </router-link>
         <router-link to="/catalog"><p class="link">Catalog</p></router-link>
-        <p>About Us</p>
-        <p>Contact</p>
+
+        <a href="/#about">
+          <p>About Us</p>
+        </a>
+       
+        <a href="/#subscribe">
+          <p>Contact</p>
+        </a>
+       
       </div>
 
       <div class="hidden lg:flex gap-2 items-center">
@@ -68,7 +151,11 @@ watchEffect(() => {
           </div>
         </router-link>
       </div>
+
+
+    
     </div>
+   
   </div>
 </template>
 

@@ -73,8 +73,7 @@
 
 <script setup lang="ts">
 import useCartStore from '@/stores/CartStore';
-import { onMounted,ref } from 'vue';
-let menu = ref<boolean>(false)
+
 const CartStore = useCartStore()
 
     

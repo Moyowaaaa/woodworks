@@ -23,8 +23,8 @@
                     <div class="w-full lg:w-9/12 flex flex-col gap-4">
                         <div class="w-11/12 flex items-center font-[avenir-medium] pt-6">
                             <div class="w-8/12 ">Product</div>
-                            <div class="w-2/12 flex justify-center">Quantity</div>
-                            <div class="w-2/12 flex justify-center">Price</div>
+                            <div class="w-2/12 hidden lg:flex justify-center">Quantity</div>
+                            <div class="w-2/12 hidden lg:flex justify-center">Price</div>
                         </div>
 
 
@@ -53,7 +53,7 @@
 
                             <div class="flex justify-between text-[#02886B] text-lg font-[avenir-medium]">
                                 <p>Total</p>
-                                <p>{{ CartStore.totalAmountOfItemInCart}}</p>
+                                <p>N{{ CartStore.totalAmountOfItemInCart}}K</p>
                             </div>
 
                             <button class="py-2 px-4 text-white bg-[#57A695] flex items-center justify-center my-6">Go to checkout</button>

@@ -1,5 +1,5 @@
 <template>
-    <div class="min-h-screen pt-32  mt-64 lg:pt-0 lg:mt-32 w-full lg:w-10/12 mx-auto flex flex-col lg:flex-row ">
+    <div class="min-h-screen pt-32  mt-64 lg:pt-0 lg:mt-32 w-full lg:w-10/12 mx-auto flex flex-col lg:flex-row " id="subscribe">
 
         <div class="w-full lg:w-5/12 flex flex-col justify-center ">
             <div class="h-auto  py-32 lg:py-0 lg:h-4/6  flex flex-col justify-center bg-[#EAF3F3]">

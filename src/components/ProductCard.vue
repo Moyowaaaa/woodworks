@@ -13,7 +13,7 @@
         </div>
             <div>
                 <small class="">Goal Design</small>
-                <p class="font-[avenir-bold] text-[#57A695] text-base lg:text-xl">{{ product.price }}</p>
+                <p class="font-[avenir-bold] text-[#57A695] text-base lg:text-xl">N{{ product.price }}K</p>
             </div>
         </div>
         

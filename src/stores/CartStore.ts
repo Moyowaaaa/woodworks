@@ -11,7 +11,7 @@ interface Product extends Item {
     id:number,
     image:string
     name:string
-    price:string
+    price:number
     category:string
     type:string
     size:string
@@ -53,18 +53,14 @@ const useCartStore = defineStore('cart', {
 
         totalAmountOfItemInCart:(state) => {
             const ProductStore = useProductStore();
-    return state.cart.reduce((total, item) => {
-        const product = ProductStore.products.find((p) => p.id === item.id);
-        if (product) {
-            const productPrice = parseFloat(product.price);
-            if (!isNaN(productPrice)) {
-                return total + (productPrice * item.quantity);
-            } else {
-                console.log("Invalid price for product with id: " + product.id);
-            }
-        }
-        return total;
-    }, 0);
+            return state.cart.reduce((total, item) => {
+                const product = ProductStore.products.find((p) => p.id === item.id);
+                if (product) {
+                    return total + (product.price * item.quantity);
+                }
+                return total;
+            }, 0);
+    
         }
 
         

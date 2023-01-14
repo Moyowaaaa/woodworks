@@ -4,7 +4,8 @@
 @tailwind utilities;
 
 html, #app {
-    background-color: #eff1f0
+    background-color: #eff1f0;
+    /* scroll-behavior: smooth; */
 }
 
 

@@ -34,7 +34,7 @@ const stats = [
       
         </div>
 
-        <div class="hidden w-full  min-h-screen lg:flex justify-center mb-[12rem] ">
+        <div class="hidden w-full  min-h-screen lg:flex justify-center mb-[12rem] " id="about">
             <div class="w-6/12  flex flex-col">
                     <div class="bg-[#EAF3F3] py-24 flex flex-col  items-center" >
                         <div class="w-9/12">

@@ -4,7 +4,7 @@
         <RouterLink :to="('item/' + product.id)">
             
         <div class= "bg w-full flex flex-col "  :class="[product.large ? 'h-full object-contain' : 'h-[19rem] relative justify-center items-center' ]" :style="{ backgroundImage: `url('${product.image}')` }">
-              <!-- <img :src="product.image" class=""/> -->
+          
 
               <div :class="[product.large ? 'relative left-6 top-10 bg-white w-max py-2 px-4 rounded-xl font-[avenir-bold] text-full text-[#57A695] ' : 'hidden' ]">
                 
@@ -33,9 +33,7 @@
         </div>
         
 
-        <!-- <div class="h-1/6">
-            <p>{{ product.name }}</p>
-        </div> -->
+    
         <div class=" flex flex-col px-4 font-[avenir]" :class="[product.large ? 'hidden':'h-[6rem] ']">
             <div class="text-sm lg:text-base">{{ product.name }} <br/> {{ product.productCode }}</div>
 
@@ -45,7 +43,7 @@
 
                 <small class="text-xs">Goal Design</small>
 
-                <p class="font-[avenir-bold] text-lg text-[#57A695]">{{ product.price }}</p>
+                <p class="font-[avenir-bold] text-lg text-[#57A695]">N{{ product.price }}K</p>
             </div>
             
 

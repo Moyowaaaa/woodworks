@@ -85,7 +85,7 @@
 <div class="w-full  flex flex-col">
     <h2 class="py-4 text-3xl font-[avenir-bold]">You might like</h2>
 
-    <div class="w-full flex gap-8 overflow-x-scroll lg:overflow-x-hidden">
+    <div class="w-full flex gap-8 overflow-x-scroll lg:overflow-x-hidden" @click="scrollTop">
             <ProductCard :product="product" v-for="product in ItemStore.bestSellers.slice(0,4)"/>
           </div> 
     
@@ -107,6 +107,7 @@ import Navbar from '@/components/Navbar.vue';
 import MainLayout from '@/layouts/MainLayout.vue';
 import ProductCard from '@/components/ProductCard.vue';
 import useCartStore from '@/stores/CartStore';
+import { storeToRefs } from 'pinia';
 
 
 
@@ -127,15 +128,6 @@ watchEffect(() => {
   
 
     product.value = ItemStore.productById(id)
-
-   
-
-
-
-
-    
-    // console.log(ProductStore.singleProduct(id))
-
 })
 
 
@@ -144,14 +136,25 @@ onMounted(() => {
     setTimeout(() => {
         page.scrollIntoView()
     },200)
+
+
   
 })
+
+const scrollTop = () => {
+    let page:any = document.querySelector('#page')
+    page.scrollIntoView({
+        behavior: 'smooth'
+    })
+}
 
 
 const addToCart = () => {
     CartStore.addItemToCart(product.value.id, 1)
-    // cart.addItemToCart(product)
+    
 }
+
+
 
 
 
