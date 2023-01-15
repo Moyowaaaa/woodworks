@@ -3,8 +3,9 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHistory(),
   routes: [
+    //Pages
     {
       path: '/',
       name: 'home',
@@ -37,7 +38,7 @@ const router = createRouter({
     },
     // Error 404
     {
-      path: '/:catchAll(.*)',
+      path: '/:pathMatch(.*)*',
       name: 'error',
       component: () => import('../views/Error404.vue')
     },

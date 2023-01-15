@@ -1,7 +1,7 @@
 <template>
     <div class="error min-h-screen px-24 flex flex-col justify-center">
        <h2 class="text-5xl lg:text-6xl font-[avenir-bold]">404 ERROR</h2>
-       <p class=" font-[avenir-medium] text-sm lg:text-base">This page in not found</p>
+       <p class=" font-[avenir-medium] text-sm lg:text-base">This page is not found</p>
        <small class="pt-8">Go back Home</small>
        
        <router-link to="/" >
