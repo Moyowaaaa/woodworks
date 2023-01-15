@@ -7,7 +7,7 @@
 <div class="flex flex-col gap-2 mt-8" id="page">
     
     <div class="link flex flex-col lg:flex-row items-center w-max" @click="router.back()"> <img src="../assets/images/rightArrow.svg" class="w-[30px]"/> Back</div>
-<div class="flex  items-center gap-2 font-[avenir-medium]">
+<div class="flex flex-wrap items-center gap-2 font-[avenir-medium]">
     <p>Catalog /</p>  <p> {{ product?.type }}s / </p> <p class="font-[avenir-bold]">{{ product?.name }}</p></div>
 <h1 class="text-4xl text-[#02886B] font-medium">{{ product?.name }}</h1>
 <div class="flex flex-col lg:flex-row gap-2 lg:gap-6 font-[avenir-medium] font-medium">
@@ -124,9 +124,12 @@ let product = ref()
 
 watchEffect(() => {
     const id = route.params.id as any
-  
-
-    product.value = ProductStore.productById(id)
+    if(!ProductStore.productById(id)) {
+        router.push('/')
+    } else {
+        product.value = ProductStore.productById(id)
+    }
+ 
 })
 
 

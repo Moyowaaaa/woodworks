@@ -70,7 +70,8 @@ display: inline-block;
 
 @media screen and (max-width:485px) {
     .title-section {
-        background:none;
+        /* background:n; */
+        background-position-x: -80vh;
     }
 }
 </style>

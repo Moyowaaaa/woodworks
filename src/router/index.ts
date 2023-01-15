@@ -5,6 +5,7 @@ import Catalog from '../views/Catalog.vue'
 import Cart from '../views/Cart.vue'
 import WishList from '../views/WishList.vue'
 
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -37,6 +38,12 @@ const router = createRouter({
       path: '/item/:id',
       name: 'item-id',
       component: () => import('../views/Product.vue')
+    },
+    // Error 404
+    {
+      path: '/:catchAll(.*)',
+      name: 'error',
+      component: () => import('../views/Error404.vue')
     },
     {
       path: '/about',

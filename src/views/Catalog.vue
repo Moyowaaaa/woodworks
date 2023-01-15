@@ -47,10 +47,18 @@ import Footer from '@/components/Footer.vue';
 import StoreProductCard from '../components/StoreProductCard.vue'
 import useProductStore from '@/stores/ProductStore';
 import { storeToRefs } from 'pinia';
+import { onMounted } from 'vue';
+import { useRouter } from 'vue-router';
 
-
+const router = useRouter()
 const ProductStore = useProductStore()
 const {products} = storeToRefs(ProductStore)
+
+onMounted(() => {
+    if(!products) {
+        router.push('/')
+    }
+})
 
 
 

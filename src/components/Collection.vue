@@ -45,13 +45,13 @@
             </div>
         </div>
         <div class="flex flex-col lg:flex-row w-full h-2/6 ">
-            <div class="w-full lg:w-6/12  sink  h-[15rem] lg:h-auto">
+            <div class="w-full lg:w-6/12  sink  h-[20rem] lg:h-auto">
                 <div class="flex flex-col gap-2 font-[avenir] text-sm lg:text-xl lg:mt-6 lg:ml-8">
                     Sink
                     <div class="flex gap-2 items-center text-sm">View More <img src="../assets/images/leftArrow.svg" class="w-[1.5rem]" /></div>
                 </div>
             </div>
-            <div class="w-full lg:w-6/12  table  h-[15rem] lg:h-auto">
+            <div class="w-full lg:w-6/12  table  h-[20rem] lg:h-auto">
                 <div class="lg:relative left-32 top-44 flex flex-col gap-1 font-[avenir] text-sm lg:text-xl mt-6 ml-8">
                     Table
                     <div class="flex gap-2 items-center text-sm">View More <img src="../assets/images/leftArrow.svg" class="w-[1.5rem]" /></div>

@@ -1,4 +1,4 @@
-import { defineStore } from "pinia";
+import { defineStore, acceptHMRUpdate } from "pinia";
 import useProductStore from "./ProductStore";
 
 
@@ -103,5 +103,10 @@ const useCartStore = defineStore('cart', {
 
 
 })
+
+if (import.meta.hot) {
+    import.meta.hot.accept(acceptHMRUpdate(useCartStore, import.meta.hot));
+}
+
 
 export default useCartStore;

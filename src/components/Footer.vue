@@ -18,7 +18,7 @@ onMounted(()=> {
             <p class="text-sm font-[avenir-light] lg:text-center">modern & minimalistic</p>
         </div>
 
-        <div class="text-sm lg:text-base flex items-center h-full items-center">
+        <div class="text-xs lg:text-base flex items-center h-full justify-center lg:justify-start">
             &copy;
             <span>{{ year }}</span>&nbsp; Modern & Minimalistic Furniture
         </div>
