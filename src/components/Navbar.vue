@@ -139,7 +139,7 @@ X
 
 
 
-<!-- ----- mobile Nnavbar---- -->
+<!-- ----- mobile navbar---- -->
   <div class="fixed z-50 bg-white w-full  h-screen mt-16 flex flex-col px-4 font-[avenir-medium] pt-6 ease-in-out duration-700 " :class="[isOpen ? 'translate-x-0':'translate-x-full']" @click="toggleMenu">
     <router-link to="/wishlist">
           <div class="flex items-center gap-4">
@@ -173,46 +173,7 @@ X
 
   </div>
 
-   <!-- -----mobile  -->
-    <!-- <div class="fixed w-full border-2 border-[green] h-[102rem] -mx-4 lg:hidden  overflow-hidden  pt-[52.5rem]">
-      
-      <div class="h-full bg-white px-4 flex flex-col pt-6 font-[avenir-medium]">
-        <router-link to="/wishlist">
-          <div class="flex items-center gap-4">
-            <p>Wishlist</p>
-            <div
-            class="w-max p-2 rounded-md bg-[#57A695] flex items-center justify-center"
-          >
-            <img src="../assets/images/star.svg" class="w-[1rem]" />
-          </div>
-          </div>
-          
-        </router-link>
-
-
-
-        
-        <div class="flex  font-[avenir-medium] flex-col gap-6 h-full pt-6">
-        <router-link to="/">
-          <div><p class="link">Home</p></div>
-        </router-link>
-        <router-link to="/catalog"><p class="link">Catalog</p></router-link>
-
-        <a href="/#about">
-          <p>About Us</p>
-        </a>
-       
-        <a href="/#subscribe">
-          <p>Contact</p>
-        </a>
-       
-      </div>
-      </div>
-        
-      </div> -->
-
-      <!-- ---- -->
- 
+  
   </div>
 </template>
 

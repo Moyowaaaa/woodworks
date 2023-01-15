@@ -9,16 +9,3 @@
 <script setup lang="ts">
 import Footer from '../components/Footer.vue'
 </script>
-
-<!-- <style scoped>
-.main{
-    padding: 1.5rem 5rem 3rem;
-}
-
-@media screen and (max-width:485px) {
-    .main{
-    padding:auto
-}
-
-}
-</style> -->

@@ -11,10 +11,10 @@
     <div class="relative h-full w-full  flex flex-col justify-center pl-6 lg:pl-24">
 
         <div class="w-full ">
-            <!-- <h2>Catalog</h2> -->
-            <small class="font-[avenir-light]">Catalog</small>
-                <h1 class="font-[avenir-medium] text-[#005454] text-3xl lg:text-4xl">NEW CHAIR COLLECTION</h1>
-                <p class="text-sm lg:text-lg font-[avenir-medium]">Sofa Chairs, Dining Chair, Hull Chair, Nolan Chair, Mordern Chair, Ingatop Chair.</p>
+      
+            <p class="font-[avenir-medium] font-medium text-sm">Catalog</p>
+                <h1 class="font-[avenir-medium] font-semibold text-[#005454] text-3xl lg:text-4xl">NEW CHAIR COLLECTION</h1>
+                <p class="text-sm lg:text-lg font-[avenir-medium] font-semibold">Sofa Chairs, Dining Chair, Hull Chair, Nolan Chair, Mordern Chair, Ingatop Chair.</p>
         </div>
     </div>
 

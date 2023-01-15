@@ -1,5 +1,5 @@
 <template>
-      <div class="w-full lg:w-11/12  flex flex-col lg:flex-row py-4 border-t-2 border-t-[#C4C4C4]" >
+      <div class="w-full lg:w-11/12  flex flex-col lg:flex-row py-4 border-t-2 border-t-[#C4C4C4] " >
                         <div class="w-full lg:w-8/12 cursor-pointer" @click="viewProduct(cartItem.id)">
                             <div class="flex flex-col lg:flex-row items-center gap-6 h-[18rem] py-6 lg:py-0">
                                 <div class="image  rounded-md w-11/12 lg:w-4/12" :class="[cartItem.large? 'bg-none h-full' : 'bg-white  h-4/5 ']"   :style="{ backgroundImage: `url('${cartItem.image}')` }"></div>
@@ -41,7 +41,7 @@ import { useRouter } from 'vue-router';
 const router = useRouter()
 
 const CartStore = useCartStore()
-console.log(CartStore.productsInCart)
+
 
 defineProps(['cartItem'])
 

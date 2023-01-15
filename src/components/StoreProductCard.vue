@@ -60,8 +60,14 @@
 </template>
 
 <script setup lang="ts">
+import type { Product } from '@/types/interfaces';
 
-defineProps(['product'])
+
+interface productProps{
+    product:Product
+}
+
+defineProps<productProps>()
 
 const addTofavorite = (id:number) => {
     console.log(id)

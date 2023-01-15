@@ -12,10 +12,8 @@
 
 <script setup lang="ts">
 import useCartStore from '../stores/CartStore'
-
-
 const CartStore = useCartStore()
-console.log(CartStore.productsInCart)
+
 </script>
 
 <style scoped>

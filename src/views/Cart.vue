@@ -80,7 +80,7 @@ import CartEmptyState from '@/components/CartEmptyState.vue';
 
 
 const CartStore = useCartStore()
-console.log(CartStore.productsInCart)
+
 
 </script>
 

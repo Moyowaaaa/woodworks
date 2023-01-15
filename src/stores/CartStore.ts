@@ -1,29 +1,8 @@
 import { defineStore, acceptHMRUpdate } from "pinia";
 import useProductStore from "./ProductStore";
+import type { Item, Product } from "@/types/interfaces";
 
 
-interface Item {
-    id:number,
-    quantity:number
-}
-
-interface Product extends Item {
-    id:number,
-    image:string
-    name:string
-    price:number
-    category:string
-    type:string
-    size:string
-    material:string
-    country:string
-    // colors:['black','g
-    productCode:number
-    large:boolean
-    slug:string
-    Limage:string,
-    quantity:number
-}
 
 const useCartStore = defineStore('cart', {
     state:() => ({

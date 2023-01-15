@@ -3,7 +3,6 @@ import ProductCard from './ProductCard.vue';
 import useProductStore from '@/stores/ProductStore';
 
 const ProductStore = useProductStore()
-console.log(ProductStore.bestSellers)
 
 const stats = [
     {

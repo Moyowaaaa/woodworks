@@ -27,25 +27,14 @@
 </template>
 
 <script setup lang="ts">
-// type item = {
-//     name:string,
-//     category:string,
-//     description:string,
-//     id:string,
-//     image:string,
-//     price:number
-//     colors:[string,string]
-//     company:string,
-//     productCode:number
+import type { Product } from '@/types/interfaces';
 
-import router from '@/router';
 
-// }
-// interface Product {
-//     product:item
-// }
+interface productProps{
+    product:Product
+}
 
-defineProps(['product'])
+defineProps<productProps>()
 
 
 

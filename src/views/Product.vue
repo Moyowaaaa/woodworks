@@ -68,13 +68,17 @@
         <div class="w-full lg:w-6/12  py-12 flex flex-col gap-2">
             <p class="text-[#02886B] font-[avenir-bold] text-4xl">N{{ product.price }}K</p>
 
+
             
   <p class="w-full lg:w-11/12 text-justify font-[avenir]">Natural materials combine with a sculptural silhouette for an irresistible fusion of form and function. This gorgeous Weave solid wood chair Features: an artfully tapered frame complete with a contrasting rope woven seat that will keep you sitting comfortably for hours on end.</p>
 
+ <p class="font-[avenir-medium] text-lg flex gap-1 items-center"> Color: <span class="font-[avenir-light]"> {{ product.colors[0] }}</span>   <span class="text-white bg-[#57A695] h-[1rem] w-[1rem] rounded-full text-xs " :style="{backgroundColor: `${product.colors[0]}`}">
+
+ </span> </p>
 
   <div class="w-full flex my-8 gap-2">
     <button class="py-4 px-8 bg-[#02886B] border-none - outline-none text-white " @click="addToCart">Add To Cart</button>
-    <!-- <button class="bg-black py-4 px-5"><img src="../assets/images/star.svg"/></button> -->
+   
   </div>
         </div>
 
