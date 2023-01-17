@@ -1,7 +1,7 @@
 <template>
     <div class="fixed z-10 w-full bg-none flex py-4 justify-between px-4 lg:px-0 lg:pr-10 lg:pl-24 items-center bg-[#FFFFFF] z-20" >
         <router-link to="/">
-        <img src="../assets/images/logo.svg" class="w-[10rem]"/>
+        <img src="../assets/images/logo.svg" width="160"/>
         </router-link>   
 
         <div class="lg:hidden  nav-button z-50">

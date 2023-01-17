@@ -12,18 +12,22 @@ html, #app {
 @font-face {
     font-family:"avenir-bold" ;
     src: url('../fonts/Metropolis-Bold.otf');
+    font-display: swap; 
 }
 @font-face {
     font-family:"avenir" ;
     src: url('../fonts/Metropolis-Regular.otf');
+    font-display: swap; 
 }
 @font-face {
     font-family:"avenir-medium" ;
     src: url('../fonts/Metropolis-Medium.otf');
+    font-display: swap; 
 }
 @font-face {
     font-family:"avenir-light" ;
     src: url('../fonts/Metropolis-Light.otf');
+    font-display: swap; 
 }
 
 ::-webkit-scrollbar {

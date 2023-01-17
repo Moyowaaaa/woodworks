@@ -1,9 +1,9 @@
 <template>
-  <div class="min-h-screen flex">
+  <div class="min-h-screen flex overflow-hidden">
    
       <div class="auth-bg w-6/12 hidden lg:flex flex-col pl-20 pt-12">
         <router-link to="/">
-        <img src="../assets/images/logo.svg" class="w-[10rem]" />
+        <img src="../assets/images/logo.svg" width="160px" />
     </router-link>
       </div>
 
@@ -25,5 +25,6 @@ import SignupForm from "@/components/SignupForm.vue";
   background-image: url("/images/statsBg.png");
   background-size: contain;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 </style>

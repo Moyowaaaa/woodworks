@@ -14,7 +14,7 @@ onMounted(()=> {
     <div class="flex w-full border-t-2 border-[#C4C4C4] py-3 lg:px-[4rem] mt-0 lg:mt-12">
         <div class="flex flex-col lg:flex-row justify-between lg:items-center text-[#5B5B5B] w-10/12 mx-auto gap-4 lg:gap-0">
             <div class="flex flex-col gap-2 items-center lg:items-start">
-            <img src="../assets/images/logo.svg" class="w-[10rem]"/>
+            <img src="../assets/images/logo.svg" width="160"/>
             <p class="text-sm font-[avenir-light] lg:text-center">modern & minimalistic</p>
         </div>
 

@@ -37,7 +37,7 @@ onUnmounted(() => {
     class="fixed z-30 w-full bg-none flex py-4 justify-between px-4 lg:px-0 lg:pr-10 lg:pl-24 items-center" :class="[isScrolled ? 'bg-white shadow-md' : '']"
   >
     <router-link to="/">
-      <img src="../assets/images/logo.svg" class="w-[8rem] lg:w-[10rem]" />
+      <img src="../assets/images/logo.svg" class="logo" />
     </router-link>
 
 
@@ -83,7 +83,7 @@ X
    
 
     <div class="links hidden lg:flex items-center w-[45rem] justify-between">
-      <div class="flex gap-4 items-center font-[avenir-medium]">
+      <div class="flex gap-8 items-center font-[avenir-medium]">
         <router-link to="/">
           <div><p class="link">Home</p></div>
         </router-link>
@@ -198,5 +198,13 @@ X
   fill: none;
   stroke: black;
   stroke-linecap: round;
+}
+.logo{
+  width:160px
+}
+@media screen and (max-width:485px) {
+  .logo{
+    width: 128px;
+  }
 }
 </style>

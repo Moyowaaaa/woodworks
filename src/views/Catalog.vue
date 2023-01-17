@@ -14,7 +14,7 @@
       
             <p class="font-[avenir-medium] font-medium text-sm">Catalog</p>
                 <h1 class="font-[avenir-medium] font-semibold text-[#005454] text-3xl lg:text-4xl">NEW CHAIR COLLECTION</h1>
-                <p class="text-sm lg:text-lg font-[avenir-medium] font-semibold">Sofa Chairs, Dining Chair, Hull Chair, Nolan Chair, Mordern Chair, Ingatop Chair.</p>
+                <p class="text-sm lg:text-lg font-[avenir-medium] font-semibold">Sofa Chairs, Dining Chair, Hull Chair, Nolan Chair, Modern Chair, Ingatop Chair.</p>
         </div>
     </div>
 

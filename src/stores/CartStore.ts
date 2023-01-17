@@ -23,11 +23,11 @@ const useCartStore = defineStore('cart', {
         itemCount():number {
             return this.cart.length
         },
-        itemsInCart:(state):number => {
-            return state.cart.reduce((total, item) => {
-                return total + item.quantity;
-            }, 0);
-        },
+            itemsInCart:(state):number => {
+                return state.cart.reduce((total, item) => {
+                    return total + item.quantity;
+                }, 0);
+            },
 
 
         totalAmountOfItemInCart:(state) => {
