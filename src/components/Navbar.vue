@@ -90,7 +90,7 @@ X
         <router-link to="/catalog"><p class="link">Catalog</p></router-link>
 
         <a href="/#about">
-          <p class="link">About Us</p>
+          <p >About Us</p>
         </a>
        
         <a href="/#subscribe">
