@@ -20,15 +20,38 @@
 
 
    
+
+
+   
 </div>
 
-<div class="w-10/12 mx-auto ">
-                <h1 class="font-[avenir-medium]  pt-6   ">Catalog</h1>
-                <div class="w-full  grid auto-rows-1 lg:grid-cols-5 lg:grid-rows-4  gap-4 py-12">
-                    <StoreProductCard :product="product" v-for="product in products"/>
+<div class="w-10/12 mx-auto  mt-4 ">
 
-                  
-                 
+    <div class="w-full lg:w-6/12  flex justify-between items-center flex-col-reverse lg:flex-row gap-6">
+        <div class="flex items-center bg-white py-2  lg:pl-4 rounded-2xl">
+            <input v-model="search" placeholder="Search..." class="w-full lg:w-10/12 h-auto p-1 font-[avenir-medium] border-none outline-none" />
+            <div
+            class="w-max p-2 rounded-full bg-black flex items-center justify-center"
+          >
+            <img src="../assets/images/search.svg" class="w-[1rem]" />
+          </div>
+        </div>
+        
+
+        <h1 class="font-[avenir-medium]    ">Catalog</h1>
+
+        
+    </div>
+                
+                <div class="w-full  grid auto-rows-1 lg:grid-cols-5 lg:grid-rows-4  gap-4 py-12">
+                    <StoreProductCard :product="product" v-for="product in searchedItem"/>
+                </div>
+
+                <div v-if="searchedItem.length === 0" class="h-[40rem] w-full flex flex-col items-center gap-6">
+                    <h1 class="text-2xl lg:text-4xl font-bold font-[avenir-bold]">
+                        No Products Found.
+                    </h1>
+                    <p>Please search for something else</p>
                 </div>
                 </div>
 
@@ -47,12 +70,23 @@ import Footer from '@/components/Footer.vue';
 import StoreProductCard from '../components/StoreProductCard.vue'
 import useProductStore from '@/stores/ProductStore';
 import { storeToRefs } from 'pinia';
-import { onMounted } from 'vue';
+import { onMounted,computed,ref,watchEffect } from 'vue';
 import { useRouter } from 'vue-router';
+import type { Product } from '@/types/interfaces';
 
 const router = useRouter()
 const ProductStore = useProductStore()
 const {products} = storeToRefs(ProductStore)
+const search = ref<string>('')
+
+
+    const searchedItem = computed(() => {
+    return products.value.filter((product:Product)=> {
+        return product.name.toLowerCase().includes(search.value.toLowerCase())
+
+})
+})
+
 
 onMounted(() => {
     if(!products) {
