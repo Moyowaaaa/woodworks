@@ -6,7 +6,7 @@ import type { Item, Product } from "@/types/interfaces";
 
 const useCartStore = defineStore('cart', {
     state:() => ({
-        cart:[] as Item[]
+        cart:[] as Item[] 
     }),
     getters: {
         productsInCart: (state) => {
@@ -16,8 +16,10 @@ const useCartStore = defineStore('cart', {
                 const product:any = ProductStore.products.find((product) => product.id === item.id);
                 if (product) {
                     cartProducts.push({...product, ...item});
+                
                 }
             });
+            
             return cartProducts;
         },
         itemCount():number {

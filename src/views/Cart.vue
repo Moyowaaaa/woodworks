@@ -56,7 +56,7 @@
                                 <p>N{{ CartStore.totalAmountOfItemInCart}}K</p>
                             </div>
 
-                            <button class="py-2 px-4 text-white bg-[#57A695] flex items-center justify-center my-6">Go to checkout</button>
+                            <button class="py-2 px-4 text-white bg-[#57A695] flex items-center justify-center my-6" @click="checkOut">Go to checkout</button>
 
 
                        
@@ -75,6 +75,19 @@ import { onMounted } from 'vue';
 import useCartStore from '../stores/CartStore'
 import CartViewItem from '../components/CartViewItem.vue'
 import CartEmptyState from '@/components/CartEmptyState.vue';
+import PaystackPop  from '@paystack/inline-js'
+const paystack = new PaystackPop()
+
+
+const checkOut = () => {
+    paystack.newTransaction({
+        key:'pk_test_350b9e63f19c99738ef08e2a2e61ffcafc5d5204',
+            amount: CartStore.totalAmountOfItemInCart * 100000,
+            email: 'user@mail.com',
+            currency: 'NGN'
+    })
+}
+
 
 
 

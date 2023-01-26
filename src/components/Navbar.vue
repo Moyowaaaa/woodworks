@@ -90,11 +90,11 @@ X
         <router-link to="/catalog"><p class="link">Catalog</p></router-link>
 
         <a href="/#about">
-          <p>About Us</p>
+          <p class="link">About Us</p>
         </a>
        
         <a href="/#subscribe">
-          <p>Contact</p>
+          <p >Contact</p>
         </a>
        
       </div>
