@@ -23,7 +23,7 @@
                         <div class="w-full lg:w-2/12 ">
                         
                             <div class="relative w-full  h-full lg:flex flex-col">
-                                <div class="relative bottom-80 w-full flex justify-center  lg:bottom-0 lg:left-28 cursor-pointer hover:border-b-2 hover:border-b-[teal] lg:w-max" @click="CartStore.removeItemFromCart(cartItem.id)">
+                                <div class="relative bottom-80 w-max mx-auto lg:mx-0 flex justify-center  lg:bottom-0 lg:left-28 cursor-pointer hover:border-b-2 hover:border-b-[teal] lg:w-max" @click="CartStore.removeItemFromCart(cartItem.id)">
                                     <img src="../assets/images/close.svg" class="w-[1rem]" />
                                 </div>
                                 <div class="h-full w-full flex flex-col items-center justify-center text-[#02886B] font-[avenir-medium] text-xl">

@@ -1,7 +1,8 @@
 import { defineStore, acceptHMRUpdate } from "pinia";
 import useProductStore from "./ProductStore";
+import useToastStore from "./ToastStore";
 import type { Item, Product } from "@/types/interfaces";
-
+const ToastStore = useToastStore()
 
 
 const useCartStore = defineStore('cart', {
@@ -48,11 +49,14 @@ const useCartStore = defineStore('cart', {
     },
     actions: {
         addItemToCart(id:number, quantity:number=1) {
+            
             const ItemId = this.cart.find((product:Item) => product.id === (+id))
             if(ItemId) {
                 ItemId.quantity ++
+                ToastStore.itemIncreaased()
             } else {
                 this.cart.push({id, quantity})
+                ToastStore.success()
             }
             
         },
@@ -60,6 +64,7 @@ const useCartStore = defineStore('cart', {
             const ItemId  = this.cart.find((item) => item.id === (+id))
             if(ItemId) {
                 ItemId.quantity ++
+                ToastStore.itemIncreaased()
             }
             
         },
@@ -67,14 +72,17 @@ const useCartStore = defineStore('cart', {
             const ItemId = this.cart.find((item) => item.id === (+id));
         if (ItemId) {
             ItemId.quantity--;
+            ToastStore.ItemDecreased()
             if (ItemId.quantity <= 0) {
                 this.removeItemFromCart(id);
+                ToastStore.ItemRemoved()
             }
         }
         },
 
         removeItemFromCart(id:number) {
             this.cart = this.cart.filter((item) => item.id !== (+id))
+            ToastStore.ItemRemoved()
         }
         
         
