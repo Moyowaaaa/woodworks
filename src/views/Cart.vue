@@ -81,7 +81,7 @@ const paystack = new PaystackPop()
 
 const checkOut = () => {
     paystack.newTransaction({
-        key:'pk_test_350b9e63f19c99738ef08e2a2e61ffcafc5d5204',
+        key:'pk_test_83a163ca5ac02ae6d8d54082011c16794fe81857',
             amount: CartStore.totalAmountOfItemInCart * 100000,
             email: 'user@mail.com',
             currency: 'NGN'
