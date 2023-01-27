@@ -32,7 +32,7 @@ import { defineStore } from "pinia";
         ItemDecreased() {
             this.message = 'Item quantity decreased',
             this.show = true
-            this.color='#009676'
+            this.color='orange'
             
 
             setTimeout(() => {

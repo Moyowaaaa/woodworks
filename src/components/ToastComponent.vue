@@ -1,12 +1,10 @@
 <template>
     <Transition name="fade">
-    <div class="toast fixed  top-24 right-6 py-4 h-auto w-auto  text-white flex justify-between pl-6 pr-2 items-center rounded-md shadow-md gap-4" v-if="statusvisible"  :style="{backgroundColor: `${statusColor}`}">
+    <div class="fixed  top-24 right-6 py-4 h-auto w-auto  text-white flex justify-between pl-6 pr-2 items-center rounded-md shadow-md gap-4" v-if="statusvisible"  :style="{backgroundColor: `${statusColor}`}">
        
 <p class="">{{ status }}</p>
 
-<div class="relative  flex justify-end mx-2 text-xl cursor-pointer" @click="statusvisible = false">
-            X
-        </div>
+<div class="relative  flex justify-end mx-2 text-xl cursor-pointer" @click="statusvisible = false">X</div>
 
     </div>
     </Transition>   
@@ -15,7 +13,7 @@
 <script setup lang="ts">
 import useToastStore from '@/stores/ToastStore'
 import { storeToRefs } from 'pinia';
-import { watchEffect,ref,onMounted } from 'vue';
+import { watchEffect,ref} from 'vue';
 
 let status = ref()
 let statusColor = ref()
