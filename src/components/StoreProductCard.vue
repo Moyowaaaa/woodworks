@@ -13,8 +13,8 @@
 
             <div :class="[product.large ? 'relative left-6 top-64 flex flex-col  w-max py-2 px-4  font-[avenir-bold] text-full text-[#57A695] ' : 'hidden' ]">
                 
-               <p class="text-xl text-white">{{ product.name }}</p>
-               <small class="text-white">Goal Design</small>
+               <p class="text-xl text-white font-[avenir-medium]">{{ product.name }}</p>
+               <small class="text-white font-[avenir-medium]">Goal Design</small>
                 </div>
 
                 <!-- <div class= " z-50flex flex-col gap-4 hidden lg:flex" :class="[product.large ? 'relative left-[28rem] bottom-20':'absolute right-2 top-6']">
@@ -34,12 +34,12 @@
         
 
     
-        <div class=" flex flex-col px-4 font-[avenir]" :class="[product.large ? 'hidden':'h-[6rem] ']">
+        <div class=" flex flex-col px-4 font-[avenir-medium]" :class="[product.large ? 'hidden':'h-[6rem] ']">
             <div class="text-sm lg:text-base">{{ product.name }} <br/> {{ product.productCode }}</div>
 
 
 
-            <div class="flex justify-between items-center">
+            <div class="flex justify-between items-center font-[avenir-light]">
 
                 <small class="text-xs">Goal Design</small>
 
