@@ -6,7 +6,7 @@
 
 <div class="flex flex-col gap-2 mt-8" id="page">
     
-    <div class="link flex flex-col lg:flex-row items-center w-max" @click="router.back()"> <img src="../assets/images/rightArrow.svg" class="w-[30px]"/> Back</div>
+    <div class="link flex flex-col lg:flex-row items-center w-max" @click="router.back()"> <img src="../assets/images/rightArrow.svg" class="w-[30px]" alt="right arrow"/> Back</div>
 <div class="flex flex-wrap items-center gap-2 font-[avenir-medium]">
     <p>Catalog /</p>  <p> {{ product?.type }}s / </p> <p class="font-[avenir-bold]">{{ product?.name }}</p></div>
 <h1 class="text-4xl text-[#02886B] font-medium">{{ product?.name }}</h1>

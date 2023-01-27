@@ -6,9 +6,9 @@
             <div class="flex gap-8">
 
                 <div class="hidden lg:flex flex-col gap-2 w-full lg:w-max ">
-                    <img src="../assets/images/tealDash.svg" />
-                    <img src="../assets/images/blackDash.svg" />
-                    <img src="../assets/images/tealDash.svg" />
+                    <img src="../assets/images/tealDash.svg"  alt="dash"/>
+                    <img src="../assets/images/blackDash.svg" alt="dash"/>
+                    <img src="../assets/images/tealDash.svg"  alt="dash"/>
                 </div>
 
                 <div class="flex flex-col gap-2 w-full  h-screen justify-center lg:h-auto px-4 lg:px-0">
@@ -27,7 +27,7 @@ of what you love.” – Nate Berkus .
 
 <router-link to="/catalog" >
 <div class=" flex gap-2 items-center font-[avenir-medium] pt-12 w-max ">
-    <p class="link">View Catalog</p> <img src="../assets/images/leftArrow.svg" />
+    <p class="link">View Catalog</p> <img src="../assets/images/leftArrow.svg" alt="left arrow" />
 </div>
 </router-link>  
 

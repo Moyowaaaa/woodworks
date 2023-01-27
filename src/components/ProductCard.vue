@@ -5,7 +5,7 @@
         <div class="h-full w-full flex flex-col items-center lg:block">
             
 
-        <img :src="product.image" />
+        <img :src="product.image" alt="product image"/>
         <div class="w-[16rem] px-8 text-xs lg:text-base lg:w-full flex lg:gap-12  justify-between items-center px-2 lg:px-0">
             <div class="font-[avenir-bold]"> {{ product.name }} <br/>
             {{ product.productCode }}

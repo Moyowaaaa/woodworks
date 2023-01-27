@@ -14,7 +14,7 @@ onMounted(()=> {
     <div class="flex w-full border-t-2 border-[#C4C4C4] py-3 lg:px-[4rem] mt-0 lg:mt-12">
         <div class="flex flex-col lg:flex-row justify-between lg:items-center text-[#5B5B5B] w-10/12 mx-auto gap-4 lg:gap-0">
             <div class="flex flex-col gap-2 items-center lg:items-start">
-            <img src="../assets/images/logo.svg" width="160"/>
+            <img src="../assets/images/logo.svg" width="160" alt="logo"/>
             <p class="text-sm font-[avenir-light] lg:text-center">modern & minimalistic</p>
         </div>
 
@@ -25,16 +25,16 @@ onMounted(()=> {
 
         <div class="flex gap-2 items-center justify-center lg:justify-start">
             <div class="p-2 w-max bg-[#DCEBEB] rounded-full flex items-center justify-center">
-                <img src="../assets/images/twitter.svg" />
+                <img src="../assets/images/twitter.svg" alt="twitter"/>
             </div>
 
             <div class="p-2 w-max bg-[#DCEBEB] rounded-full flex items-center justify-center">
-                <img src="../assets/images/youtube.svg" />
+                <img src="../assets/images/youtube.svg" alt="youtube"/>
             </div>
 
 
             <div class="p-2 w-max bg-[#DCEBEB] rounded-full flex items-center justify-center">
-                <img src="../assets/images/instagram.svg" />
+                <img src="../assets/images/instagram.svg" alt="instagram"/>
             </div>
         </div>
         </div>

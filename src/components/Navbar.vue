@@ -52,7 +52,7 @@ onUnmounted(() => {
           <div
             class="w-max p-2 rounded-md bg-black flex items-center justify-center"
           >
-            <img src="../assets/images/cart.svg" class="w-[1rem]" />
+            <img src="../assets/images/cart.svg" class="w-[1rem]" alt="cart"/>
 
             <div
               class="absolute top-2 ml-6 text-white bg-[#57A695] px-1 rounded-full text-xs"
@@ -84,9 +84,9 @@ X
 
     <div class="links hidden lg:flex items-center w-[45rem] justify-between">
       <div class="flex gap-8 items-center font-[avenir-medium]">
-        <router-link to="/">
-          <div><p class="link">Home</p></div>
-        </router-link>
+        <router-link to="/"><div><p class="link">Home</p></div></router-link>
+
+
         <router-link to="/catalog"><p class="link">Catalog</p></router-link>
 
         <a href="/#about">
@@ -104,7 +104,7 @@ X
           <div
             class="w-max p-2 rounded-md bg-[#57A695] flex items-center justify-center"
           >
-            <img src="../assets/images/star.svg" class="w-[1rem]" />
+            <img src="../assets/images/star.svg" class="w-[1rem]" alt="star"/>
           </div>
         </router-link>
 
@@ -112,7 +112,7 @@ X
           <div
             class="w-max p-2 rounded-md bg-black flex items-center justify-center"
           >
-            <img src="../assets/images/cart.svg" class="w-[1rem]" />
+            <img src="../assets/images/cart.svg" class="w-[1rem]" alt="cart" />
 
             <div
               class="absolute top-2 ml-6 text-white bg-[#57A695] px-1 rounded-full text-xs"
@@ -126,7 +126,7 @@ X
           <div
             class="w-max p-2 rounded-md bg-black flex items-center justify-center"
           >
-            <img src="../assets/images/wishlist.svg" class="w-[1rem]" />
+            <img src="../assets/images/wishlist.svg" class="w-[1rem]" alt="wishlist"/>
           </div>
         </router-link>
       </div>
@@ -144,11 +144,7 @@ X
     <router-link to="/wishlist">
           <div class="flex items-center gap-4">
             <p>Wishlist</p>
-            <div
-            class="w-max p-2 rounded-md bg-[#57A695] flex items-center justify-center"
-          >
-            <img src="../assets/images/star.svg" class="w-[1rem]" />
-          </div>
+         
           </div>
           
         </router-link>

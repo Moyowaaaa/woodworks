@@ -14,7 +14,7 @@
 
                         <div class="flex items-center gap-2 mt-4">
                             <p>SUBSCRIBE</p>
-                            <img src="../assets/images/greenLeftArrow.svg" />
+                            <img src="../assets/images/greenLeftArrow.svg" alt="left arrow"/>
                         </div>
                     </div>
                 </div>

@@ -6,7 +6,7 @@
             <p class="link font-[avenir-medium] text-base lg:text-lg">Catalog  &rarr;</p>
         </router-link>
         
-        <img src="../assets/images/favoritesEmpty.svg" class="h-[12rem] lg:h-[20rem]"/>
+        <img src="../assets/images/favoritesEmpty.svg" class="h-[12rem] lg:h-[20rem]" alt="empty cart"/>
 
     </div>
 </template>

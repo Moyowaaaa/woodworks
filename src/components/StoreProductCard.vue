@@ -17,19 +17,7 @@
                <small class="text-white font-[avenir-medium]">Goal Design</small>
                 </div>
 
-                <!-- <div class= " z-50flex flex-col gap-4 hidden lg:flex" :class="[product.large ? 'relative left-[28rem] bottom-20':'absolute right-2 top-6']">
-                    <div class="w-max p-2 rounded-full bg-[#EDEDED]  flex items-center justify-center " @click="addTofavorite(product.id)">
-                <img src="../assets/images/favourites.svg" class="w-[1rem]"/>
-            </div>
-
-            <div class="w-max p-2 rounded-full bg-[#57A695]  flex items-center justify-center">
-                <img src="../assets/images/outline.svg" class="w-[1rem]"/>
-            </div>
-
-
-
-
-                </div> -->
+            
         </div>
         
 

@@ -33,7 +33,7 @@
             <div
             class="w-max p-2 rounded-full bg-black flex items-center justify-center"
           >
-            <img src="../assets/images/search.svg" class="w-[1rem]" />
+            <img src="../assets/images/search.svg" class="w-[1rem]" alt="search icon" />
           </div>
         </div>
         

@@ -1,7 +1,7 @@
 <template>
     <div class="fixed z-10 w-full bg-none flex py-4 justify-between px-4 lg:px-0 lg:pr-10 lg:pl-24 items-center bg-[#FFFFFF] z-20" >
         <router-link to="/">
-        <img src="../assets/images/logo.svg" width="160"/>
+        <img src="../assets/images/logo.svg" width="160" alt="woodworks"/>
         </router-link>   
 
         <div class="lg:hidden  nav-button z-50">
@@ -28,20 +28,20 @@
 
             <router-link to="/signup">
             <div class="w-max p-2 rounded-md bg-[#57A695] flex items-center justify-center">
-                <img src="../assets/images/wishlist.svg" class="w-[1rem]"/>
+                <img src="../assets/images/wishlist.svg" class="w-[1rem]" alt="wishlist"/>
             </div>
             </router-link>
 
             <router-link to="/wishlist">
             <div class="w-max p-2 rounded-md bg-black  flex items-center justify-center">
-                <img src="../assets/images/star.svg" class="w-[1rem]"/>
+                <img src="../assets/images/star.svg" class="w-[1rem]" alt="star"/>
             </div>
             </router-link>
 
 
             <router-link to="/cart">
             <div class="w-max p-2 rounded-md bg-black  flex items-center justify-center">
-                <img src="../assets/images/cart.svg" class="w-[1rem]"/>
+                <img src="../assets/images/cart.svg" class="w-[1rem]" alt="cart"/>
 
                 <div class="absolute top-2  ml-6 text-white bg-[#57A695] px-1 rounded-full text-xs">
                     {{ CartStore.itemsInCart }}

@@ -8,7 +8,7 @@
        
        <router-link to="/" >
 <div class=" flex gap-2 items-center font-[avenir-medium] pt-4 w-max ">
-   <img src="../assets/images/rightArrow.svg" />   <p class="link">Home</p>
+   <img src="../assets/images/rightArrow.svg" alt="right arrow"/>   <p class="link">Home</p>
 </div>
 </router-link>  
     </div>

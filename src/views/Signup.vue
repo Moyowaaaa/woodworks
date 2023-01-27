@@ -3,7 +3,7 @@
    
       <div class="auth-bg w-6/12 hidden lg:flex flex-col pl-20 pt-12">
         <router-link to="/">
-        <img src="../assets/images/logo.svg" width="160px" />
+        <img src="../assets/images/logo.svg" width="160px" alt="logo"/>
     </router-link>
       </div>
 
