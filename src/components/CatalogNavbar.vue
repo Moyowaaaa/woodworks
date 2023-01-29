@@ -41,7 +41,7 @@
 
             <router-link to="/cart">
             <div class="w-max p-2 rounded-md bg-black  flex items-center justify-center">
-                <img src="../assets/images/cart.svg" class="w-[1rem]" alt="cart"/>
+                <img src="../assets/images/cart.svg" class="16" alt="cart"/>
 
                 <div class="absolute top-2  ml-6 text-white bg-[#57A695] px-1 rounded-full text-xs">
                     {{ CartStore.itemsInCart }}

@@ -37,7 +37,7 @@ onUnmounted(() => {
     class="fixed z-30 w-full bg-none flex py-4 justify-between px-4 lg:px-0 lg:pr-10 lg:pl-24 items-center" :class="[isScrolled ? 'bg-white shadow-md' : '']"
   >
     <router-link to="/">
-      <img src="../assets/images/logo.svg" class="logo" />
+      <img src="../assets/images/logo.svg" class="logo"  alt="woodworks"/>
     </router-link>
 
 
@@ -52,7 +52,7 @@ onUnmounted(() => {
           <div
             class="w-max p-2 rounded-md bg-black flex items-center justify-center"
           >
-            <img src="../assets/images/cart.svg" class="w-[1rem]" alt="cart"/>
+            <img src="../assets/images/cart.svg" width="16" alt="cart"/>
 
             <div
               class="absolute top-2 ml-6 text-white bg-[#57A695] px-1 rounded-full text-xs"
@@ -112,7 +112,7 @@ X
           <div
             class="w-max p-2 rounded-md bg-black flex items-center justify-center"
           >
-            <img src="../assets/images/cart.svg" class="w-[1rem]" alt="cart" />
+            <img src="../assets/images/cart.svg" width="16" alt="cart" />
 
             <div
               class="absolute top-2 ml-6 text-white bg-[#57A695] px-1 rounded-full text-xs"
