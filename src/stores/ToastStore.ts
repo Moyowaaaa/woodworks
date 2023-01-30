@@ -46,8 +46,6 @@ import { defineStore } from "pinia";
             this.message = 'Item removed from WishList',
             this.show = true
             this.color='orange'
-            
-
             setTimeout(() => {
                 this.message = '',
                 this.show= false
@@ -57,8 +55,6 @@ import { defineStore } from "pinia";
             this.message = 'Item quantity decreased',
             this.show = true
             this.color='orange'
-            
-
             setTimeout(() => {
                 this.message = '',
                 this.show= false

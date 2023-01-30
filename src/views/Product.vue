@@ -80,9 +80,9 @@
     <button class="py-4 px-8 bg-[#02886B] border-none - outline-none text-white " @click="addToCart">Add To Cart</button>
     
 
-    <button class="  border-none outline-none text-white px-4" v-if="productStatus" @click="addToWishlist"><img src="../assets/images/star2.svg "/></button>
+    <button class="  border-none outline-none text-white px-4" v-if="productStatus " @click="addToWishlist"><img src="../assets/images/star2.svg "/></button>
 
-    <button class="px-4 border-none - outline-none text-white" v-if="!productStatus" @click="removeItem"><img src="../assets/images/star3.svg "/></button>
+    <button class="px-4 border-none - outline-none text-white" v-if="!productStatus " @click="removeItem"><img src="../assets/images/star3.svg "/></button>
    
   </div>
         </div>
@@ -171,12 +171,12 @@ const addToCart = () => {
     CartStore.addItemToCart(product.value.id, 1)
 }
 
-let productStatus = ref<any>(true)
+let productStatus = ref<boolean | null>(true)
 
 const addToWishlist = () => {
-    WishlistStore.addItemToWishList(product.value.id,true)
+    WishlistStore.addItemToWishList(product.value.id)
     productStatus.value = false
-    console.log(WishlistStore.itemsinWishlist)
+   
 
 }
 
@@ -184,6 +184,11 @@ const removeItem = () => {
     WishlistStore.removeItemfromWishlist(product.value.id)
     productStatus.value = true
 }
+
+
+console.log(product.value)
+
+
 
 
 

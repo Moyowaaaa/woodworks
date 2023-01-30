@@ -29,11 +29,9 @@ const useWishlistStore = defineStore('WishlistStore', {
         }
     },
     actions: {
-        addItemToWishList(id:number,inList:boolean){
+        addItemToWishList(id:number,inList:boolean = true){
             const itemId = this.wishlist.find((product:wishListItem) => product.id === (+id))
-            if(itemId) {
-                inList = true
-            } else {
+            if(!itemId) {
                 this.wishlist.push({id,inList})
                 ToastStore.addedWishList()
             }
