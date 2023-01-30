@@ -78,6 +78,8 @@
 
   <div class="w-full flex my-8 gap-2">
     <button class="py-4 px-8 bg-[#02886B] border-none - outline-none text-white " @click="addToCart">Add To Cart</button>
+
+    <button class="py-4 px-8 bg-[black] border-none - outline-none text-white">Add To Wishlist</button>
    
   </div>
         </div>

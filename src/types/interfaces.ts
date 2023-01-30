@@ -1,8 +1,12 @@
 export interface Item {
     id:number,
-    quantity:number
+    quantity:number 
 }
 
+
+export interface wishListItem {
+    id:number
+}
 
 
 

@@ -1,9 +1,11 @@
 <script setup lang="ts">
 // import {} from 'vue-router'
 import useCartStore from "@/stores/CartStore";
+import useWishlistStore from "@/stores/WishlistStore";
 import { onMounted, ref,watchEffect, onUnmounted } from "vue";
 let menu = ref<boolean>(false);
 const CartStore = useCartStore();
+const WishlistStore = useWishlistStore()
 
 const isScrolled = ref<boolean>(false)
 const isOpen = ref<boolean>(false)
@@ -105,6 +107,12 @@ X
             class="w-max p-2 rounded-md bg-[#57A695] flex items-center justify-center"
           >
             <img src="../assets/images/star.svg" class="w-[1rem]" alt="star"/>
+
+            <div
+              class="absolute top-2 ml-6 text-white bg-[#57A695] px-1 rounded-full text-xs"
+            >
+            {{ WishlistStore.favouritesCount }} 
+            </div>
           </div>
         </router-link>
 
