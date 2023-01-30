@@ -5,7 +5,8 @@ export interface Item {
 
 
 export interface wishListItem {
-    id:number
+    id:number,
+    inList?:boolean
 }
 
 

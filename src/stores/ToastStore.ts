@@ -20,13 +20,37 @@ import { defineStore } from "pinia";
         },
         itemIncreaased() {
             this.message = 'Item quantity increased',
+            this.show = true,
+            this.color='#02886B'
+
+            setTimeout(() => {
+                this.message = '',
+                this.show= false
+            },2000)
+        },
+        addedWishList() {
+            this.message = 'Item added to Wishlist',
             this.show = true
+            this.color='#02886B'
             
 
             setTimeout(() => {
                 this.message = '',
-                this.show= false,
-                this.color='#02886B'
+                this.show= false
+               
+            },2000)
+        },
+
+
+        removedWishList() {
+            this.message = 'Item removed from WishList',
+            this.show = true
+            this.color='orange'
+            
+
+            setTimeout(() => {
+                this.message = '',
+                this.show= false
             },2000)
         },
         ItemDecreased() {

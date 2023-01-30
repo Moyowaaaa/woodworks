@@ -2,15 +2,19 @@ import { defineStore,acceptHMRUpdate } from "pinia";
 import useProductStore from "./ProductStore";
 import useToastStore from "./ToastStore";
 import type { Product, wishListItem } from "@/types/interfaces";
-
+const ToastStore = useToastStore()
 
 const useWishlistStore = defineStore('WishlistStore', {
     state:() => ({
-        wishlist:[] as unknown as wishListItem[]
+        wishlist:[] as unknown as wishListItem[],
+        isInWishList:false,
     }),
     getters: {
         favouritesCount: (state) =>{
             return state.wishlist.length
+        },
+        itemExists:(state) => {
+
         },
         itemsinWishlist:(state) => {
             const ProductStore = useProductStore()
@@ -25,14 +29,18 @@ const useWishlistStore = defineStore('WishlistStore', {
         }
     },
     actions: {
-        addItemToWishList(id:number){
+        addItemToWishList(id:number,inList:boolean){
             const itemId = this.wishlist.find((product:wishListItem) => product.id === (+id))
             if(itemId) {
-                this.wishlist.push({id})
+                inList = true
+            } else {
+                this.wishlist.push({id,inList})
+                ToastStore.addedWishList()
             }
         },
         removeItemfromWishlist(id:number){
             this.wishlist = this.wishlist.filter((item) => item.id !== (+id))
+            ToastStore.removedWishList()
         }
     }
 })

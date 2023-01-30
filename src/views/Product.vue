@@ -78,11 +78,16 @@
 
   <div class="w-full flex my-8 gap-2">
     <button class="py-4 px-8 bg-[#02886B] border-none - outline-none text-white " @click="addToCart">Add To Cart</button>
+    
 
-    <button class="py-4 px-8 bg-[black] border-none - outline-none text-white">Add To Wishlist</button>
+    <button class="  border-none outline-none text-white px-4" v-if="productStatus" @click="addToWishlist"><img src="../assets/images/star2.svg "/></button>
+
+    <button class="px-4 border-none - outline-none text-white" v-if="!productStatus" @click="removeItem"><img src="../assets/images/star3.svg "/></button>
    
   </div>
         </div>
+
+       
 
        
         
@@ -113,6 +118,7 @@ import MainLayout from '@/layouts/MainLayout.vue';
 import ProductCard from '@/components/ProductCard.vue';
 import useCartStore from '@/stores/CartStore';
 import { storeToRefs } from 'pinia';
+import useWishlistStore from '@/stores/WishlistStore';
 
 
 
@@ -123,6 +129,10 @@ const router = useRouter();
 let reviews = ref( Math.floor(Math.random() * 15)+ 4)
 let numberOfTimesBought = ref( Math.floor(Math.random() * 30) +5)
 const CartStore = useCartStore()
+const WishlistStore = useWishlistStore()
+
+
+
 
 
 
@@ -159,8 +169,22 @@ const scrollTop = () => {
 
 const addToCart = () => {
     CartStore.addItemToCart(product.value.id, 1)
-    
 }
+
+let productStatus = ref<any>(true)
+
+const addToWishlist = () => {
+    WishlistStore.addItemToWishList(product.value.id,true)
+    productStatus.value = false
+    console.log(WishlistStore.itemsinWishlist)
+
+}
+
+const removeItem = () => {
+    WishlistStore.removeItemfromWishlist(product.value.id)
+    productStatus.value = true
+}
+
 
 
 
