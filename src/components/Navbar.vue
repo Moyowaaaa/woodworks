@@ -64,22 +64,6 @@ onUnmounted(() => {
           </div>
         </router-link>
 
-
-        <router-link to="/wishlist">
-          <div
-            class="w-max p-2 rounded-md bg-[#57A695] flex items-center justify-center"
-          >
-            <img src="../assets/images/star.svg" class="w-[1rem]" alt="star"/>
-
-            <div
-              class="absolute top-2 ml-6 text-white bg-[#57A695] px-1 rounded-full text-xs"
-            >
-            {{ WishlistStore.favouritesCount }} 
-            </div>
-          </div>
-        </router-link>
-
-
         <!-- -----mobile nav button  -->
 
       <div class=" nav-button z-50" @click="toggleMenu" v-if="!isOpen">
@@ -165,6 +149,13 @@ X
 
 <!-- ----- mobile navbar---- -->
   <div class="fixed z-50 bg-white w-full  h-screen mt-16 flex flex-col px-4 font-[avenir-medium] pt-6 ease-in-out duration-700 " :class="[isOpen ? 'translate-x-0':'translate-x-full']" @click="toggleMenu">
+    <router-link to="/wishlist">
+          <div class="flex items-center gap-4">
+            <p>Wishlist</p>
+         
+          </div>
+          
+        </router-link>
 
         <div class="flex   flex-col gap-6 h-full pt-6">
         <router-link to="/">
