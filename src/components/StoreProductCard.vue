@@ -2,19 +2,17 @@
 
     <div class="card  min-h-[25rem] h-auto flex flex-col bg-white  grid  row-span-4 rounded-lg flex flex-col " :class="[product.large ? 'col-span-2 ' : 'col-span-2 lg:col-span-1' ]"   >
 
-        <div class="py-2 absolute hidden  lg:flex justify-between items-center  cursor-pointer " :class="[product.large ? 'w-[30rem] ml-2 mt-4' : 'w-[15rem] mt-6 pr-4' ]">
-            <RouterLink :to="('item/' + product.id)">
-            <div :class="[product.large && !product.medium ? 'relative left-6 cursor-pointer bg-white w-max py-2 px-4 rounded-xl font-[avenir-bold] text-full text-[#57A695] ' : 'text-white opacity-0' ]">
+        <div class="py-2 absolute hidden  lg:flex justify-between items-center px-2" :class="[product.large ? 'w-[30rem] ml-2' : 'w-[15rem] mt-6' ]">
+            <div :class="[product.large ? 'relative left-6 cursor-pointer bg-white w-max py-2 px-4 rounded-xl font-[avenir-bold] text-full text-[#57A695] ' : 'text-white opacity-0' ]">
                 
                 N{{ product.price }}K
                 </div>
-                </RouterLink>
 
-                <div @click="addTofavorite(product.id)" v-if="!inList" :class="[product.large && !product.medium ? 'bg-[white] p-2 rounded' : '']">
+                <div @click="addTofavorite(product.id)" v-if="!inList ">
                     <img src="../assets/images/star2.svg" />
                 </div>
 
-                <div @click="removeItem(product.id)" v-if="inList " :class="[product.large && !product.medium ? 'bg-[white] p-2 rounded' : '']">
+                <div @click="removeItem(product.id)" v-if="inList ">
                     <img src="../assets/images/star3.svg" />
                 </div>
 
@@ -31,19 +29,10 @@
 
         
         <RouterLink :to="('item/' + product.id)">
-            <div class=" flex rounded-2xl" :class="[product.large && !product.medium ? 'h-full w-auto item-center justify-center bg-black' : 'h-4/5 items-center justify-center w-full']">
-                <img :src="product.image" :class="[product.large ? 'rounded-xl' : '']" />
-
-
-
-                <div class="absolute pl-10  mt-[4rem] h-[18rem] flex flex-col justify-end w-[30rem] ml-2 mt-4" v-if="product.large && !product.medium">
-                    <p class="text-2xl text-white font-[avenir-medium]">{{ product.name }}</p>
-               <small class="text-white font-[avenir-medium]">Goal Design</small>
-                </div>
+            <div class=" flex rounded-2xl" :class="[product.large  ? 'h-full' : 'h-4/5 items-center justify-center w-full']">
+                <img :src="product.image" class="" />
 
             </div>
-
-            
             
 
             
@@ -71,7 +60,7 @@
         
 
     
-        <div class=" flex flex-col px-4 font-[avenir-medium]" :class="[product.large && !product.medium ? 'hidden':'h-[6rem]  ']">
+        <div class=" flex flex-col px-4 font-[avenir-medium]" :class="[product.large ? 'hidden':'h-[6rem] ']">
             <div class="text-sm lg:text-base">{{ product.name }} <br/> {{ product.productCode }}</div>
 
 
@@ -104,6 +93,9 @@ import { watchEffect,ref } from 'vue';
 const WishlistStore = useWishlistStore()
 const router = useRouter()
 
+const viewItem = (id:any) => {
+    router.push({name:'item-id', params: id})
+}
 
 interface productProps{
     product:Product

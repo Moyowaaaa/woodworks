@@ -3,7 +3,7 @@
         <Navbar />
         <WishListEmpty />
       
-            <div class=" mt-24 flex flex-col " v-if="wishlist.length > 0">
+            <div class=" mt-24 flex flex-col pb-10" v-if="wishlist.length > 0">
 
                 <div class="px-4 lg:px-10">
                     <div class="flex items-center text-[#57A695] text-sm pt-6">
@@ -30,8 +30,8 @@
                
             </div>
 
-           <div class="w-full  py-4">
-            <div class="w-11/12 mx-auto flex gap-2 flex-wrap lg:px-6">
+           <div class="w-full  py-4 ">
+            <div class="w-10/12 mx-auto flex gap-2 flex-wrap lg:px-6 ">
                 <WishListItem :product="item" v-for="item in itemsinWishlist "  />
             </div>
 

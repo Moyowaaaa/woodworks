@@ -20,7 +20,7 @@ const removefromList = () => {
 <template>
 
 
-        <div class="w-[20rem] h-[25rem] bg-white  rounded-xl px-2">
+        <div class="w-full lg:w-[20rem] h-[25rem] bg-white  rounded-xl px-2">
             <RouterLink :to="('/item/' + product.id)">
             <div class="h-4/5 flex items-center justify-center object-contain">
                 <img :src="product.image" alt="product image"  class=""/>
