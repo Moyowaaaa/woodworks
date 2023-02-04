@@ -8,13 +8,13 @@
                 N{{ product.price }}K
                 </div>
 
-                <div @click="addTofavorite(product.id)" v-if="!inList ">
+                <!-- <div @click="addTofavorite(product.id)" v-if="!inList ">
                     <img src="../assets/images/star2.svg" />
                 </div>
 
                 <div @click="removeItem(product.id)" v-if="inList ">
                     <img src="../assets/images/star3.svg" />
-                </div>
+                </div> -->
 
 
                

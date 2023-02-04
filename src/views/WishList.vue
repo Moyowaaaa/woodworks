@@ -3,7 +3,7 @@
         <Navbar />
         <WishListEmpty />
       
-            <div class=" mt-24 flex flex-col pb-10" v-if="wishlist.length > 0">
+            <!-- <div class=" mt-24 flex flex-col pb-10" v-if="wishlist.length > 0">
 
                 <div class="px-4 lg:px-10">
                     <div class="flex items-center text-[#57A695] text-sm pt-6">
@@ -45,7 +45,7 @@
 
 
            
-        </div>
+        </div> -->
       
 
         
