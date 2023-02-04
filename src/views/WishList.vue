@@ -65,7 +65,7 @@ const {wishlist, itemsinWishlist} = storeToRefs(useWishlistStore())
 
 let product:any = ref<any>()
 
-console.log(product.value)
+
 
 </script>
 

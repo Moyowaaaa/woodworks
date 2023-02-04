@@ -28,6 +28,7 @@ export interface Product {
     price:number,
     country?:string
     colors?:ProductColors[],
+    medium?:boolean
   
 }
 

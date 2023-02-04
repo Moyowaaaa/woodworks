@@ -25,7 +25,7 @@
 <div class="w-full lg:w-10/12 mx-auto flex flex-col lg:flex-row gap-6">
     <div class="w-full lg:w-6/12 flex flex-col items-center py-8 gap-6 ">
 
-        <div class="bg w-full  rounded-lg h-[25rem]" :style="{ backgroundImage: `url('${product?.Limage}')` }" :class="[product.large === true ? 'bg-transparent' : 'bg-white']"></div>
+        <div class="bg w-full  rounded-lg h-[25rem]" :style="{ backgroundImage: `url('${product?.Limage}')` }" :class="[product.large && !product.medium ? 'bg-transparent' : 'bg-white']"></div>
 
         <div class="flex flex-col w-full font-[avenir-medium]">
             <div class="flex w-full justify-between items-center">
@@ -80,9 +80,9 @@
     <button class="py-4 px-8 bg-[#02886B] border-none - outline-none text-white " @click="addToCart">Add To Cart</button>
     
 
-    <button class="  border-none outline-none text-white px-4" v-if="productStatus " @click="addToWishlist"><img src="../assets/images/star2.svg "/></button>
+    <button class="  border-none outline-none text-white px-4" v-if="!inList " @click="addToWishlist"><img src="../assets/images/star2.svg "/></button>
 
-    <button class="px-4 border-none - outline-none text-white" v-if="!productStatus " @click="removeItem"><img src="../assets/images/star3.svg "/></button>
+    <button class="px-4 border-none - outline-none text-white" v-if="inList " @click="removeItem"><img src="../assets/images/star3.svg "/></button>
    
   </div>
         </div>
@@ -131,12 +131,8 @@ let numberOfTimesBought = ref( Math.floor(Math.random() * 30) +5)
 const CartStore = useCartStore()
 const WishlistStore = useWishlistStore()
 
-
-
-
-
-
 let product = ref()
+let inList = ref<boolean | null>(null)
 
 watchEffect(() => {
     const id = route.params.id as any
@@ -154,6 +150,9 @@ onMounted(() => {
     setTimeout(() => {
         page.scrollIntoView()
     },200)
+
+
+    
 
 
   
@@ -185,8 +184,17 @@ const removeItem = () => {
     productStatus.value = true
 }
 
+watchEffect(() => {
+    const exists = ref<boolean | null>((WishlistStore.wishlist.map((item) => item.id).includes(product.value.id)))
+    inList.value = exists.value
+})
 
-console.log(product.value)
+
+
+
+
+
+
 
 
 
