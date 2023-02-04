@@ -9,7 +9,7 @@
 
 
         <MainLayout v-if="CartStore.itemsInCart > 0">
-            <div class="min-h-screen flex flex-col mt-12">
+            <div class="min-h-screen flex flex-col pt-12">
 
 
                 <div class="flex items-center text-[#57A695] text-sm pt-6">
