@@ -1,6 +1,6 @@
 <template>
     <Transition name="fade">
-    <div class="fixed  top-24 right-6 py-4 h-auto w-auto  text-white flex justify-between pl-6 pr-2 items-center rounded-md shadow-md gap-4" v-if="statusvisible"  :style="{backgroundColor: `${statusColor}`}">
+    <div class="fixed z-30 top-24 right-6 py-4 h-auto w-auto  text-white flex justify-between pl-6 pr-2 items-center rounded-md shadow-md gap-4" v-if="statusvisible"  :style="{backgroundColor: `${statusColor}`}">
        
 <p class="">{{ status }}</p>
 

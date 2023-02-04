@@ -25,10 +25,11 @@
    
 </div>
 
-<div class="w-10/12 mx-auto  mt-4 ">
+<div class="w-11/12 lg:w-10/12 mx-auto  mt-4 ">
 
-    <div class="w-full lg:w-6/12  flex justify-between items-center flex-col-reverse lg:flex-row gap-6">
-        <div class="flex items-center bg-white py-2  lg:pl-4 rounded-2xl">
+    <div class="w-full lg:w-6/12  flex items-center flex-col-reverse lg:flex-row gap-6 lg:grid grid-cols-5 ">
+
+        <div class="flex items-center bg-white py-2  lg:pl-4 rounded-2xl col-span-4 justify-between px-4">
             <input v-model="search" placeholder="Search..." class="w-full lg:w-10/12 h-auto p-1 font-[avenir-medium] border-none outline-none" />
             <div
             class="w-max p-2 rounded-full bg-black flex items-center justify-center"
@@ -38,7 +39,7 @@
         </div>
         
 
-        <h1 class="font-[avenir-medium]    ">Catalog</h1>
+        <h1 class="font-[avenir-medium] text-2xl font-medium ">Catalog</h1>
 
         
     </div>

@@ -272,6 +272,7 @@ const useProductStore = defineStore('ProductStore', {
                     large: true,
                     slug: 'dark-grey',
                     Limage: '/images/darkGreyNolanSofaa.png',
+                    medium:true,
                 },
 
                 {
