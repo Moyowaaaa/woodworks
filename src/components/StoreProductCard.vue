@@ -2,7 +2,7 @@
 
     <div class="card  min-h-[25rem] h-auto flex flex-col bg-white  grid  row-span-4 rounded-lg flex flex-col " :class="[product.large ? 'col-span-2 ' : 'col-span-2 lg:col-span-1' ]"   >
 
-        <div class="py-2 absolute hidden  lg:flex justify-between items-center px-2" :class="[product.large ? 'w-[30rem] ml-2' : 'w-[15rem] mt-6' ]">
+        <div class="py-2 absolute hidden  lg:flex justify-between items-center px-2" :class="[product.large ? 'w-[30rem] ml-2 ' : 'w-[15rem] mt-6' ]">
             <div :class="[product.large ? 'relative left-6 cursor-pointer bg-white w-max py-2 px-4 rounded-xl font-[avenir-bold] text-full text-[#57A695] ' : 'text-white opacity-0' ]">
                 
                 N{{ product.price }}K
@@ -29,8 +29,8 @@
 
         
         <RouterLink :to="('item/' + product.id)">
-            <div class=" flex rounded-2xl" :class="[product.large  ? 'h-full' : 'h-4/5 items-center justify-center w-full']">
-                <img :src="product.image" class="" />
+            <div class=" flex rounded-2xl" :class="[product.large && !product.medium  ? 'rounded-xl h-full' : 'h-4/5 items-center justify-center w-full']">
+                <img :src="product.image" class="" :class="[product.large && !product.medium  ? 'rounded-xl' : '']" />
 
             </div>
             
@@ -60,7 +60,7 @@
         
 
     
-        <div class=" flex flex-col px-4 font-[avenir-medium]" :class="[product.large ? 'hidden':'h-[6rem] ']">
+        <div class=" flex flex-col px-4 font-[avenir-medium]" :class="[product.large && !product.medium ? 'hidden':'h-[6rem] ']">
             <div class="text-sm lg:text-base">{{ product.name }} <br/> {{ product.productCode }}</div>
 
 
