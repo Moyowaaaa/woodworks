@@ -21,7 +21,8 @@ const useProductStore = defineStore('ProductStore', {
                     slug: 'black-volar',
                     Limage: '/images/blackValorSofa.png',
                     notLarge: true,
-                    colors:['black','white']
+                    colors:['black','white'],
+                    scale:'large'
                 },
                 {
                     id: 2,
@@ -37,6 +38,7 @@ const useProductStore = defineStore('ProductStore', {
                     productCode: 12572,
                     slug: 'blue-volar',
                     Limage: '/images/blueValorChairr.png',
+                    scale:'small'
                 },
                 {
                     id: 3,
@@ -52,6 +54,7 @@ const useProductStore = defineStore('ProductStore', {
                     productCode: 15673,
                     slug: 'blue-Nolan',
                     Limage: '/images/blueNolanChairr.png',
+                    scale:'small'
                 },
                 // {
                 //     id:4,
@@ -83,6 +86,7 @@ const useProductStore = defineStore('ProductStore', {
                     productCode: 14673,
                     slug: 'navy-volar',
                     Limage: '/images/navyBlueValorChairr.png',
+                    scale:'small'
                 },
                 {
                     id: 6,
@@ -95,7 +99,7 @@ const useProductStore = defineStore('ProductStore', {
                     material: 'Veneer',
                     country: 'Sweden',
                     colors:['green','teal'],
-
+                    scale:'small',
                     productCode: 15985,
                     slug: 'green-Nolan',
                     Limage: '/images/greenNolanSofaa.png',
@@ -115,6 +119,7 @@ const useProductStore = defineStore('ProductStore', {
                     colors:['brown'],
                     slug: 'bedside-stand',
                     Limage: '/images/bedsideTableStandd.png',
+                    scale:'small'
                 },
                 {
                     id: 8,
@@ -130,6 +135,7 @@ const useProductStore = defineStore('ProductStore', {
                     productCode: 16780,
                     slug: 'grey-sofa',
                     Limage: '/images/greyNolanSofaa.png',
+                    scale:'small'
                 },
 
                 {
@@ -147,6 +153,7 @@ const useProductStore = defineStore('ProductStore', {
                     bestSeller: true,
                     slug: 'black-nolan',
                     Limage: '/images/greyNolanChairr.png',
+                    scale:'small'
                 },
 
                 {
@@ -164,6 +171,7 @@ const useProductStore = defineStore('ProductStore', {
                     country: 'Italia',
                     slug: 'grey-Hull',
                     Limage: '/images/greyHullChairr.png',
+                    scale:'small'
                 },
                 {
                     id: 11,
@@ -179,6 +187,7 @@ const useProductStore = defineStore('ProductStore', {
                     country: 'Italia',
                     slug: 'grey-lamp',
                     Limage: '/images/greyStandingLampp.png',
+                    scale:'small'
                 },
                 {
                     id: 12,
@@ -194,6 +203,7 @@ const useProductStore = defineStore('ProductStore', {
                     country: 'India',
                     slug: 'brown-deli',
                     Limage: '/images/brownDeliChairr.png',
+                    scale:'small'
                 },
                 {
                     id: 13,
@@ -209,6 +219,7 @@ const useProductStore = defineStore('ProductStore', {
                     country: 'Great Britain',
                     slug: 'beige-nolan',
                     Limage: '/images/greyNolaa.png',
+                    scale:'small'
                 },
 
                 {
@@ -225,6 +236,7 @@ const useProductStore = defineStore('ProductStore', {
                     slug: 'grey-no-chair',
                     Limage: '/images/greyNolanChairr.png',
                     colors:['grey','darkslategrey'],
+                    scale:'small'
                 },
                 // {
                 //     id:16,
@@ -256,6 +268,7 @@ const useProductStore = defineStore('ProductStore', {
 
                     slug: 'blue-hull',
                     Limage: '/images/blueHullChairr.png',
+                    scale:'small'
                 },
                 {
                     id: 15,
@@ -273,6 +286,7 @@ const useProductStore = defineStore('ProductStore', {
                     slug: 'dark-grey',
                     Limage: '/images/darkGreyNolanSofaa.png',
                     medium:true,
+                    scale:'medium'
                 },
 
                 {
@@ -289,6 +303,7 @@ const useProductStore = defineStore('ProductStore', {
                     productCode: 15985,
                     slug: 'grey-venir',
                     Limage: '/images/greyVenirChair.png',
+                    scale:'small'
                 },
                 {
                     id: 18,
@@ -305,6 +320,7 @@ const useProductStore = defineStore('ProductStore', {
                     bestSeller: true,
                     slug: 'blue-hull',
                     Limage: '/images/blueHullChairr.png',
+                    scale:'small'
                 },
             ] as unknown as Product []
         };

@@ -47,6 +47,20 @@ onUnmounted(() => {
 
     <div class="lg:hidden flex gap-2 items-center">
 
+      <router-link to="/wishlist">
+          <div
+            class="w-max p-2 rounded-md bg-[#57A695] flex items-center justify-center"
+          >
+            <img src="../assets/images/star.svg" class="w-[1rem]" alt="star"/>
+
+            <div
+              class="absolute top-2 ml-6 text-white bg-[#57A695] px-1 rounded-full text-xs"
+            >
+            {{ WishlistStore.favouritesCount }} 
+            </div>
+          </div>
+        </router-link>
+
       
 
 

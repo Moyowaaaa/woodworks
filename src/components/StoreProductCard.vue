@@ -1,20 +1,20 @@
 <template>
 
-    <div class="card  min-h-[25rem] h-auto flex flex-col bg-white  grid  row-span-4 rounded-lg flex flex-col " :class="[product.large ? 'col-span-2 ' : 'col-span-2 lg:col-span-1' ]"   >
+    <div class="card   h-auto flex flex-col bg-white  grid  row-span-4 rounded-lg flex flex-col " :class="[product.scale]"   >
 
-        <div class="py-2 absolute hidden  lg:flex justify-between items-center px-2" :class="[product.large ? 'w-[30rem] ml-2 ' : 'w-[15rem] mt-6' ]">
-            <div :class="[product.large ? 'relative left-6 cursor-pointer bg-white w-max py-2 px-4 rounded-xl font-[avenir-bold] text-full text-[#57A695] ' : 'text-white opacity-0' ]">
+        <div class="py-2 absolute hidden  lg:flex justify-between items-center px-2 mt-6" :class="[product.large ? 'w-[30rem] ml-2 ' : 'w-[15rem] ' ]">
+            <div :class="[product.large && !product.medium ? 'relative left-6 cursor-pointer bg-white w-max py-2 px-4 rounded-xl font-[avenir-bold] text-full text-[#57A695] ' : 'text-white opacity-0' ]">
                 
                 N{{ product.price }}K
                 </div>
 
-                <!-- <div @click="addTofavorite(product.id)" v-if="!inList ">
+                <div @click="addTofavorite(product.id)" v-if="!inList ">
                     <img src="../assets/images/star2.svg" />
                 </div>
 
                 <div @click="removeItem(product.id)" v-if="inList ">
                     <img src="../assets/images/star3.svg" />
-                </div> -->
+                </div>
 
 
                
@@ -119,6 +119,7 @@ watchEffect(() => {
 })
 
 
+
 </script>
 
 <style scoped>
@@ -128,9 +129,30 @@ watchEffect(() => {
     /* background-size: contain; */
 }
 
+.large{
+    grid-column: span 2 / span 2;
+    min-height: 25rem;
+}
+
+.medium{
+    grid-column: span 2 / span 2;
+    min-height: 25rem;
+}
+
+.small{
+    grid-column: span 1 / span 1;
+    min-height: 25rem;
+}
+
 @media screen and (max-width:485px) {
     .bg{
         background-size:80%;
+    }
+    .large{
+        min-height:auto;
+    }
+    .small{
+        grid-column: span 2 / span 2;
     }
 }
 </style>
