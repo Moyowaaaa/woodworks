@@ -2,8 +2,8 @@
 
     <div class="card   h-auto flex flex-col bg-white  grid  row-span-4 rounded-lg flex flex-col " :class="[product.scale]"   >
 
-        <div class="py-2 absolute hidden  lg:flex justify-between items-center px-2 mt-6" :class="[product.large ? 'w-[30rem] ml-2 ' : 'w-[15rem] ' ]">
-            <div :class="[product.large && !product.medium ? 'relative left-6 cursor-pointer bg-white w-max py-2 px-4 rounded-xl font-[avenir-bold] text-full text-[#57A695] ' : 'text-white opacity-0' ]">
+        <div class="py-2 absolute hidden  lg:flex justify-between items-center px-2 mt-6" :class="[product.scale === 'large' || product.scale === 'medium' ? 'w-[30rem] ml-2 ' : 'w-[15rem] ' ]">
+            <div :class="[product.scale === 'large' ? 'relative left-6 cursor-pointer bg-white w-max py-2 px-4 rounded-xl font-[avenir-bold] text-full text-[#57A695] ' : 'text-white opacity-0' ]">
                 
                 N{{ product.price }}K
                 </div>
@@ -20,17 +20,12 @@
                
 
 
-            <!-- <div class=" border-2 border-[blue] p-4 ">j</div>
-        <div class="border-2 border-[green] ">
-            <img src="../assets/images/star2.svg" />
-                <img src="../assets/images/favourites.svg" />
-            </div> -->
         </div>
 
         
         <RouterLink :to="('item/' + product.id)">
-            <div class=" flex rounded-2xl" :class="[product.large && !product.medium  ? 'rounded-xl h-full' : 'h-4/5 items-center justify-center w-full']">
-                <img :src="product.image" class="" :class="[product.large && !product.medium  ? 'rounded-xl' : '']" />
+            <div class=" flex rounded-2xl" :class="[product.scale === 'large' ? 'rounded-xl h-full' : 'h-4/5 items-center justify-center w-full']">
+                <img :src="product.image" class="" :class="[product.scale === 'large' ? 'rounded-xl' : '']" />
 
             </div>
             
@@ -39,28 +34,11 @@
            
 
 
-            
-        <!-- <div class= "bg w-full flex flex-col "  :class="[product.large ? 'h-full ' : 'h-[19rem] relative justify-center items-center' ]" :style="{ backgroundImage: `url('${product.image}')` } ">
-          
-            <img :src="product.image" />
-
-              <div :class="[product.large ? 'relative left-6 top-10 bg-white w-max py-2 px-4 rounded-xl font-[avenir-bold] text-full text-[#57A695] ' : 'hidden' ]">
-                
-            N{{ product.price }}K
-            </div>
-
-            <div :class="[product.large ? 'relative left-6 top-64 flex flex-col  w-max py-2 px-4  font-[avenir-bold] text-full text-[#57A695] ' : 'hidden' ]">
-                
-               <p class="text-xl text-white font-[avenir-medium]">{{ product.name }}</p>
-               <small class="text-white font-[avenir-medium]">Goal Design</small>
-                </div>
-
-            
-        </div> -->
+      
         
 
     
-        <div class=" flex flex-col px-4 font-[avenir-medium]" :class="[product.large && !product.medium ? 'hidden':'h-[6rem] ']">
+        <div class=" flex flex-col px-4 font-[avenir-medium]" :class="[product.scale === 'large' ? 'hidden':'h-[6rem] ']">
             <div class="text-sm lg:text-base">{{ product.name }} <br/> {{ product.productCode }}</div>
 
 
