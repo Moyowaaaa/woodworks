@@ -6,7 +6,7 @@
 
 <div class="flex flex-col gap-2 mt-8" id="page">
     
-    <div class="link flex flex-col lg:flex-row items-center w-max" @click="router.back()"> <img src="../assets/images/rightArrow.svg" class="w-[30px]" alt="right arrow"/> Back</div>
+    <div class="link flex  items-center w-max" @click="router.back()"> <img src="../assets/images/rightArrow.svg" class="w-[30px]" alt="right arrow"/><p> Back</p></div>
 <div class="flex flex-wrap items-center gap-2 font-[avenir-medium]">
     <p>Catalog /</p>  <p> {{ product?.type }}s / </p> <p class="font-[avenir-bold]">{{ product?.name }}</p></div>
 <h1 class="text-4xl text-[#02886B] font-medium">{{ product?.name }}</h1>
@@ -25,7 +25,7 @@
 <div class="w-full lg:w-10/12 mx-auto flex flex-col lg:flex-row gap-6">
     <div class="w-full lg:w-6/12 flex flex-col items-center py-8 gap-6 ">
 
-        <div class="bg w-full  rounded-lg h-[25rem]" :style="{ backgroundImage: `url('${product?.Limage}')` }" :class="[product.large && !product.medium ? 'bg-transparent' : 'bg-white']"></div>
+        <div class="bg w-full  rounded-lg h-[25rem]" :style="{ backgroundImage: `url('${product?.Limage}')` }" :class="[product.scale === 'large' ? 'bg-transparent' : 'bg-white']"></div>
 
         <div class="flex flex-col w-full font-[avenir-medium]">
             <div class="flex w-full justify-between items-center">

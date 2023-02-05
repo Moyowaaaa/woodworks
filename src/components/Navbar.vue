@@ -197,7 +197,7 @@ X
 
 <style scoped>
 .link {
-  display: inline-block;
+  /* display: inline-block; */
   padding-bottom: 2px;
   background-image: linear-gradient(#222222, #222222);
   background-position: right -100% bottom 0;
