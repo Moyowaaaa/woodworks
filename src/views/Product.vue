@@ -126,7 +126,7 @@ const ProductStore = useProductStore()
 
 const route = useRoute();
 const router = useRouter();
-let reviews = ref( Math.floor(Math.random() * 15)+ 4)
+let reviews  = ref( Math.floor(Math.random() * 15)+ 4)
 let numberOfTimesBought = ref( Math.floor(Math.random() * 30) +5)
 const CartStore = useCartStore()
 const WishlistStore = useWishlistStore()

@@ -165,7 +165,7 @@ X
   <div class="fixed z-50 bg-white w-full  h-screen mt-16 flex flex-col px-4 font-[avenir-medium] pt-6 ease-in-out duration-700 " :class="[isOpen ? 'translate-x-0':'translate-x-full']" @click="toggleMenu">
     <router-link to="/wishlist">
           <div class="flex items-center gap-4">
-            <p>Wishlist</p>
+    
          
           </div>
           

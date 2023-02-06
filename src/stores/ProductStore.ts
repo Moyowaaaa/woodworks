@@ -5,25 +5,45 @@ const useProductStore = defineStore('ProductStore', {
     state:() => {
         return{
             products:[
+                // {
+                //     id: 1,
+                //     image: '/images/blackValorSofa.png',
+                //     name: 'Black Valor Sofa',
+                //     price: 100,
+                //     category: 'Living Room',
+                //     type: 'Sofa',
+                //     size: '100cm x 120cm x 50cm',
+                //     material: 'Veneer',
+                //     country: 'Sweden',
+                //     // colors:['black','grey'],
+                //     productCode: 10000,
+                //     large: true,
+                //     slug: 'black-volar',
+                //     Limage: '/images/blackValorSofa.png',
+                //     notLarge: true,
+                //     colors:['black','white'],
+                //     scale:'large'
+                // },
+
                 {
-                    id: 1,
-                    image: '/images/blackValorSofa.png',
-                    name: 'Black Valor Sofa',
-                    price: 100,
+                    id: 15,
+                    image: '/images/darkGreyNolanSofa.png',
+                    name: 'Dark Grey Nolan Sofa',
+                    price: 125,
                     category: 'Living Room',
                     type: 'Sofa',
                     size: '100cm x 120cm x 50cm',
                     material: 'Veneer',
                     country: 'Sweden',
-                    // colors:['black','grey'],
-                    productCode: 10000,
+                    colors:['darkgrey','black'],
+                    productCode: 15785,
                     large: true,
-                    slug: 'black-volar',
-                    Limage: '/images/blackValorSofa.png',
-                    notLarge: true,
-                    colors:['black','white'],
-                    scale:'large'
+                    slug: 'dark-grey',
+                    Limage: '/images/darkGreyNolanSofaa.png',
+                    medium:true,
+                    scale:'medium'
                 },
+                
                 {
                     id: 2,
                     image: '/images/blueValorChair.png',
@@ -269,24 +289,6 @@ const useProductStore = defineStore('ProductStore', {
                     slug: 'blue-hull',
                     Limage: '/images/blueHullChairr.png',
                     scale:'small'
-                },
-                {
-                    id: 15,
-                    image: '/images/darkGreyNolanSofa.png',
-                    name: 'Dark Grey Nolan Sofa',
-                    price: 125,
-                    category: 'Living Room',
-                    type: 'Sofa',
-                    size: '100cm x 120cm x 50cm',
-                    material: 'Veneer',
-                    country: 'Sweden',
-                    colors:['darkgrey','black'],
-                    productCode: 15785,
-                    large: true,
-                    slug: 'dark-grey',
-                    Limage: '/images/darkGreyNolanSofaa.png',
-                    medium:true,
-                    scale:'medium'
                 },
 
                 {

@@ -25,7 +25,8 @@
    
 </div>
 
-<div class="w-11/12 lg:w-10/12 mx-auto  mt-4 ">
+<MainLayout >
+<div class="w-11/12 mx-auto  mt-4 ">
 
     <div class="w-full lg:w-6/12  flex items-center flex-col-reverse lg:flex-row gap-6 lg:grid grid-cols-5 ">
 
@@ -42,9 +43,11 @@
         <h1 class="font-[avenir-medium] text-2xl font-medium ">Catalog</h1>
 
         
-    </div>
+    </div> 
                 
                 <div class="w-full  grid auto-rows-1 lg:grid-cols-5 lg:grid-rows-4  gap-4 py-12">
+                  
+                
                     <StoreProductCard :product="product" v-for="product in searchedItem"/>
                 </div>
 
@@ -55,8 +58,7 @@
                     <p>Please search for something else</p>
                 </div>
                 </div>
-
-    <Footer />
+                </MainLayout>   
 
 </div>
 
@@ -74,6 +76,7 @@ import { storeToRefs } from 'pinia';
 import { onMounted,computed,ref,watchEffect } from 'vue';
 import { useRouter } from 'vue-router';
 import type { Product } from '@/types/interfaces';
+import FeaturedProduct from '@/components/FeaturedProduct.vue';
 
 const router = useRouter()
 const ProductStore = useProductStore()
