@@ -54,6 +54,7 @@ import Navbar from './Navbar.vue'
     .title-section {
         /* background:n; */
         background-position-x: -80vh;
+        background-position-y: 0vh;
     }
 }
 </style>

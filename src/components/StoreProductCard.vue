@@ -2,7 +2,7 @@
 
     <div class="card   h-auto flex flex-col bg-white  grid  row-span-4 rounded-lg flex flex-col " :class="[product.scale]"   >
 
-        <div class="py-2 absolute hidden  lg:flex justify-between items-center px-2 mt-6" :class="[product.scale === 'large' || product.scale === 'medium' ? 'w-[30rem] ml-2 ' : 'w-[15rem] ' ]">
+        <!-- <div class="py-2 absolute hidden  lg:flex justify-between items-center px-2 mt-6" :class="[product.scale === 'large' || product.scale === 'medium' ? 'w-[30rem] ml-2 ' : 'w-[15rem] ' ]">
             <div :class="[product.scale === 'large' ? 'relative left-6 cursor-pointer bg-white w-max py-2 px-4 rounded-xl font-[avenir-bold] text-full text-[#57A695] ' : 'text-white opacity-0' ]">
                 
                 N{{ product.price }}K
@@ -20,7 +20,7 @@
                
 
 
-        </div>
+        </div> -->
 
         
         <RouterLink :to="('item/' + product.id)">

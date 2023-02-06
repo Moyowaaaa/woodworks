@@ -1,5 +1,5 @@
 <template>
-    <div class="min-h-screen h-auto w-10/12 mx-auto flex flex flex-col">
+    <div class="max-h-screen h-auto w-10/12 mx-auto flex flex flex-col">
         <h1 class="text-3xl lg:text-4xl font-[avenir-bold] text-[#005454] pb-4">OUR COLLECTION</h1>
         <div class="h-screen flex flex-col">
 
