@@ -26,7 +26,7 @@ This template should help get you started developing with Vue 3 in Vite.
 
 ## Tools and Technologies
 
-The technologies I used to achieve my solution are:
+The technologies I used on this project:
 + Vue.js
 + TypeScript
 + Tailwind CSS and CSS
