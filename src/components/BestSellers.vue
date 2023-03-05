@@ -22,7 +22,7 @@ const stats = [
 </script>
 
 <template>
-    <div class=" min-h-screen flex flex-col w-11/12 lg:w-10/12 mx-auto 
+    <div class=" lg:min-h-screen flex flex-col w-11/12 lg:w-10/12 mx-auto 
      h-auto">
         <div class=" mb-[12rem]">
             <h1 class="font-[avenir-bold] text-[#005454] text-xl pt-8 pb-6">Best Sellers</h1>

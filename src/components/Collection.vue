@@ -1,50 +1,53 @@
 <template>
-    <div class="max-h-screen h-auto w-10/12 mx-auto flex flex flex-col">
+    <div class=" w-10/12 mx-auto hidden lg:flex flex flex-col  h-max">
         <h1 class="text-3xl lg:text-4xl font-[avenir-bold] text-[#005454] pb-4">OUR COLLECTION</h1>
-        <div class="h-screen flex flex-col">
-
+        <div class="h-screen flex flex-col ">
+          
+            
             <div class="flex w-full  lg:h-4/6 flex-col lg:flex-row">
-            <div class="w-full lg:w-3/12  sofas h-[15rem] lg:h-auto">
-                <div class="flex flex-col gap-2 font-[avenir] text-sm lg:text-xl mt-12 ml-4">
-                    SOFA
-                    <div class="flex gap-2 items-center text-sm">View More <img src="../assets/images/leftArrow.svg" width="24px" alt="left arrow"/></div>
-                </div>
-            </div>
-            <div class=" w-full lg:w-6/12 ">
-                <div class="flex flex-col h-full">
-                    <div class="flex lg:flex-row w-full h-3/6">
-                        <div class="w-6/12  decor h-[15rem] lg:h-auto">
-                            <div class="flex flex-col gap-2 font-[avenir] text-sm lg:text-xl mt-6 ml-8">
-                    Decor
-                    <div class="flex gap-2 items-center text-sm">View More <img src="../assets/images/leftArrow.svg" width="24px" alt="left arrow"/></div>
-                </div>
-                        </div>
-                        <div class="w-6/12  lamp">
-                            <div class="flex flex-col gap-2 font-[avenir] text-sm lg:text-xl mt-6 ml-8">
-                    Lamp
-                    <div class="flex gap-2 items-center text-sm">View More <img src="../assets/images/leftArrow.svg"  width="24px" alt="left arrow"/></div>
-                </div>
-                        </div>
-                    </div>
-
-                    <div class="w-full h-3/6 nightStand">
-                        <div class="flex flex-col gap-2 font-[avenir] text-sm lg:text-xl mt-6 ml-8">
-                    Nightstand
-                    <div class="flex gap-2 items-center text-sm">View More <img src="../assets/images/leftArrow.svg"  width="24px" alt="left arrow"/></div>
-                </div>
-                    </div>
-
-                    
-                </div>
-            </div>
-            <div class="w-full lg:w-3/12  chair h-[15rem] lg:h-auto">
-                <div class="flex flex-col gap-2 font-[avenir] text-sm lg:text-xl mt-6 ml-8">
-                    Chair
-                    <div class="flex gap-2 items-center text-sm">View More <img src="../assets/images/leftArrow.svg"  width="24px" alt="left arrow"/></div>
-                </div>
-            </div>
+    <div class="w-full lg:w-3/12  sofas h-[15rem] lg:h-auto">
+        <div class="flex flex-col gap-2 font-[avenir] text-sm lg:text-xl mt-12 ml-4">
+            SOFA
+            <div class="flex gap-2 items-center text-sm">View More <img src="../assets/images/leftArrow.svg" width="24px" alt="left arrow"/></div>
         </div>
-        <div class="flex flex-col lg:flex-row w-full  h-2/6 ">
+    </div>
+    <div class=" w-full lg:w-6/12 ">
+        <div class="flex flex-col h-full">
+            <div class="flex lg:flex-row w-full h-3/6">
+                <div class="w-6/12  decor h-[15rem] lg:h-auto">
+                    <div class="flex flex-col gap-2 font-[avenir] text-sm lg:text-xl mt-6 ml-8">
+            Decor
+            <div class="flex gap-2 items-center text-sm">View More <img src="../assets/images/leftArrow.svg" width="24px" alt="left arrow"/></div>
+        </div>
+                </div>
+                <div class="w-6/12  lamp">
+                    <div class="flex flex-col gap-2 font-[avenir] text-sm lg:text-xl mt-6 ml-8">
+            Lamp
+            <div class="flex gap-2 items-center text-sm">View More <img src="../assets/images/leftArrow.svg"  width="24px" alt="left arrow"/></div>
+        </div>
+                </div>
+            </div>
+
+            <div class="w-full h-3/6 nightStand">
+                <div class="flex flex-col gap-2 font-[avenir] text-sm lg:text-xl mt-6 ml-8">
+            Nightstand
+            <div class="flex gap-2 items-center text-sm">View More <img src="../assets/images/leftArrow.svg"  width="24px" alt="left arrow"/></div>
+        </div>
+            </div>
+
+            
+        </div>
+    </div>
+    <div class="w-full lg:w-3/12  chair h-[15rem] lg:h-auto">
+        <div class="flex flex-col gap-2 font-[avenir] text-sm lg:text-xl mt-6 ml-8">
+            Chair
+            <div class="flex gap-2 items-center text-sm">View More <img src="../assets/images/leftArrow.svg"  width="24px" alt="left arrow"/></div>
+        </div>
+    </div>
+</div>
+
+
+<div class="flex flex-col lg:flex-row w-full  h-2/6 ">
             <div class="w-full lg:w-6/12  sink h-full lg:h-auto lg:mb-0">
                 <div class="flex flex-col gap-2 font-[avenir] text-sm lg:text-xl lg:mt-6 lg:ml-8">
                     Sink
@@ -58,7 +61,9 @@
                 </div>
             </div>
         </div>
-
+           
+            
+      
         </div>
       
 
@@ -114,6 +119,8 @@
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+
 
 
 @media screen and (max-width:485px) {
