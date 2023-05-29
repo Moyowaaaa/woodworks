@@ -1,6 +1,6 @@
 <template>
   <div
-    class="lg:h-[60rem] max-h-screen pt-32 mt-64 lg:pt-0 lg:mt-32 w-full lg:w-10/12 mx-auto flex flex-col lg:flex-row"
+    class="lg:h-[60rem] max-h-screen lg:pt-32 mb-10 lg:pt-0 lg:mt-32 w-full lg:w-10/12 mx-auto flex flex-col lg:flex-row"
     id="subscribe"
   >
     <div class="w-full lg:w-5/12 flex flex-col justify-center">

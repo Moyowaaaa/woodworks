@@ -36,12 +36,12 @@ const stats = [
     </div>
 
     <div
-      class="w-full flex-col flex lg:h-auto lg:flex-row justify-center mb-[12rem]"
+      class="w-full flex-col flex lg:h-auto lg:flex-row justify-center mb-2 lg:mb-[12rem]"
       id="about"
     >
-      <div class="w-full lg:w-6/12 flex flex-col">
-        <div class="bg-[#EAF3F3] py-24 flex flex-col items-center">
-          <div class="lg:w-9/12">
+      <div class="w-full lg:w-6/12 flex flex-col ">
+        <div class="px-4 bg-[#EAF3F3] py-6 lg:py-24 flex flex-col items-center">
+          <div class="lg:w-9/12 flex flex-col">
             <p>-We Create</p>
             <h2 class="text-4xl text-[#005454] font-[avenir-bold] lg:w-[30rem]">
               MODERN & MINIMALISTIC FURNITURE FOR YOU
