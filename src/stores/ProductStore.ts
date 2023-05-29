@@ -80,7 +80,7 @@ const useProductStore = defineStore("ProductStore", {
             id:4,
             image:'/images/blueNolanChair.png',
             name:'Blue Nolan Chair',
-            price:'N46k',
+            price:40,
             category:'Living Room',
             type:'Chair',
             size:'35cm x 75cm x 86cm',
