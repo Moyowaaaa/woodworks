@@ -22,7 +22,7 @@ const stats = [
 </script>
 
 <template>
-    <div class=" lg:min-h-screen flex flex-col w-11/12 lg:w-10/12 mx-auto 
+    <div class=" lg:h-auto   flex flex-col w-11/12 lg:w-10/12 mx-auto 
      h-auto">
         <div class=" mb-[12rem]">
             <h1 class="font-[avenir-bold] text-[#005454] text-xl pt-8 pb-6">Best Sellers</h1>
@@ -33,15 +33,15 @@ const stats = [
       
         </div>
 
-        <div class="hidden w-full  min-h-screen lg:flex justify-center mb-[12rem] " id="about">
-            <div class="w-6/12  flex flex-col">
+        <div class=" w-full flex-col flex  lg:h-auto   lg:flex-row justify-center mb-[12rem] " id="about">
+            <div class="w-full lg:w-6/12  flex flex-col">
                     <div class="bg-[#EAF3F3] py-24 flex flex-col  items-center" >
-                        <div class="w-9/12">
+                        <div class="lg:w-9/12">
                             <p>-We Create</p>
-                        <h2 class="text-4xl text-[#005454] font-[avenir-bold] w-[30rem]">MODERN & MINIMALISTIC
+                        <h2 class="text-4xl text-[#005454] font-[avenir-bold] lg:w-[30rem]">MODERN & MINIMALISTIC
 FURNITURE FOR YOU</h2>
 
-<p class="w-[25rem]">
+<p class="lg:w-[25rem]">
     Nothing beats finding the perfect furniture for your <br/>
 home, office, resturants & parks. This is when Woodwork
 comes in, to offer you the very best.
@@ -53,10 +53,10 @@ comes in, to offer you the very best.
 
 
                     <div class="w-full  py-12 my-12">
-                        <div class="flex w-full  justify-around" >
+                        <div class="flex w-full flex-col lg:flex-row  lg:justify-around" >
                             <div class="flex flex-col " v-for="stat in stats">
-                            <h2 class="text-[#005454] text-4xl font-[avenir-bold]">{{ stat.count }}</h2>
-                            <p class="w-[8rem]">{{ stat.title }}</p>
+                            <h2 class="text-[#005454] text-center py-10 lg:py-0 lg:text-left text-4xl font-[avenir-bold]">{{ stat.count }}</h2>
+                            <p class="text-base text-center lg:text-left  lg:w-[8rem]">{{ stat.title }}</p>
                         </div>
                         </div>
               

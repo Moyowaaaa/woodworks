@@ -1,11 +1,8 @@
 <template>
-    <div class="">
+    <div>
         <Navbar />
         <WishListEmpty />
         <WishListContents />
-    
-
-        
     </div>
 </template>
 
@@ -19,9 +16,6 @@ import WishListItem from '../components/WishListItem.vue'
 import { ref } from 'vue';
 import WishListContents from '@/components/WishListContents.vue';
 
-const {wishlist, itemsinWishlist} = storeToRefs(useWishlistStore())
-
-let product:any = ref<any>()
 
 
 

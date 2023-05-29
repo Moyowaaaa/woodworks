@@ -1,131 +1,72 @@
 <script setup lang="ts">
 // import {} from 'vue-router'
+import router from "@/router";
 import useCartStore from "@/stores/CartStore";
 import useWishlistStore from "@/stores/WishlistStore";
-import { onMounted, ref,watchEffect, onUnmounted } from "vue";
+import { onMounted, ref, watchEffect, onUnmounted } from "vue";
+import { useRoute, useRouter } from "vue-router";
 let menu = ref<boolean>(false);
 const CartStore = useCartStore();
-const WishlistStore = useWishlistStore()
+const WishlistStore = useWishlistStore();
 
-const isScrolled = ref<boolean>(false)
-const isOpen = ref<boolean>(false)
+const isScrolled = ref<boolean>(false);
+const isOpen = ref<boolean>(false);
+const route = useRoute();
 
 const toggleMenu = () => {
-  isOpen.value = !isOpen.value
-}
+  isOpen.value = !isOpen.value;
+};
 
 const handleScroll = () => {
   if (window.scrollY > 0) {
-        isScrolled.value = true;
-      } else {
-        isScrolled.value = false;
-      }
-}
+    isScrolled.value = true;
+  } else {
+    isScrolled.value = false;
+  }
+};
 
 onMounted(() => {
-  window.addEventListener('scroll', handleScroll);
-})
+  window.addEventListener("scroll", handleScroll);
+});
 
 onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll);
-})
+  window.removeEventListener("scroll", handleScroll);
+});
+
+const goToAboutSection = () => {
+  const aboutElement = document.querySelector("#about");
+
+  if (aboutElement) {
+    router.push("/");
+
+    setTimeout(() => {
+      aboutElement.scrollIntoView({ behavior: "smooth" });
+    }, 2000);
+  }
+};
 </script>
 
 <template>
   <div class="flex flex-col w-full h-auto">
-
-
     <div
-    class="fixed z-30 w-full bg-none flex py-4 justify-between px-4 lg:px-0 lg:pr-10 lg:pl-24 items-center" :class="[isScrolled ? 'bg-white shadow-md' : '']"
-  >
-    <router-link to="/">
-      <img src="../assets/images/logo.svg" class="logo"  alt="woodworks"/>
-    </router-link>
+      class="fixed z-30 w-full bg-none flex py-4 justify-between px-4 lg:px-0 lg:pr-10 lg:pl-24 items-center"
+      :class="[isScrolled ? 'bg-white shadow-md' : '']"
+    >
+      <router-link to="/">
+        <img src="../assets/images/logo.svg" class="logo" alt="woodworks" />
+      </router-link>
 
-
-   
-
-    <div class="lg:hidden flex gap-2 items-center">
-
-      <router-link to="/wishlist">
-          <div
-            class="w-max p-2 rounded-md bg-[#57A695] flex items-center justify-center"
-          >
-            <img src="../assets/images/star.svg" class="w-[1rem]" alt="star"/>
-
-            <div
-              class="absolute top-2 ml-6 text-white bg-[#57A695] px-1 rounded-full text-xs"
-            >
-            {{ WishlistStore.favouritesCount }} 
-            </div>
-          </div>
-        </router-link>
-
-      
-
-
-      <router-link to="/cart">
-          <div
-            class="w-max p-2 rounded-md bg-black flex items-center justify-center"
-          >
-            <img src="../assets/images/cart.svg" width="16" alt="cart"/>
-
-            <div
-              class="absolute top-2 ml-6 text-white bg-[#57A695] px-1 rounded-full text-xs"
-            >
-              {{ CartStore.itemCount }}
-            </div>
-          </div>
-        </router-link>
-
-        <!-- -----mobile nav button  -->
-
-      <div class=" nav-button z-50" @click="toggleMenu" v-if="!isOpen">
-      <svg viewBox="0 0 12 10" class="hamburger  w-[2rem] h-[2rem]" >
-        <path d="M10,2 L2,2" class="bar1"></path>
-        <path d="M2,5 L10,5" class="bar2"></path>
-        <path d="M10,8 L2,8" class="bar3"></path>
-      </svg>
-    </div>
-
-    <div class="text-3xl  w-[2rem] h-[2rem]" v-if="isOpen" @click="toggleMenu">
-X
-    </div>
-<!-- --------- -->
-
-
-    </div>
-
-   
-
-    <div class="links hidden lg:flex items-center w-[45rem] justify-between">
-      <div class="flex gap-8 items-center font-[avenir-medium]">
-        <router-link to="/"><div><p class="link">Home</p></div></router-link>
-
-
-        <router-link to="/catalog"><p class="link">Catalog</p></router-link>
-
-        <a href="/#about">
-          <p >About Us</p>
-        </a>
-       
-        <a href="/#subscribe">
-          <p >Contact</p>
-        </a>
-       
-      </div>
-
-      <div class="hidden lg:flex gap-2 items-center">
+      <div class="lg:hidden flex gap-2 items-center">
         <router-link to="/wishlist">
           <div
             class="w-max p-2 rounded-md bg-[#57A695] flex items-center justify-center"
           >
-            <img src="../assets/images/star.svg" class="w-[1rem]" alt="star"/>
+            <img src="../assets/images/star.svg" class="w-[1rem]" alt="star" />
 
             <div
               class="absolute top-2 ml-6 text-white bg-[#57A695] px-1 rounded-full text-xs"
             >
-            {{ WishlistStore.favouritesCount }} 
+              {{ WishlistStore.favouritesCount }}
             </div>
           </div>
         </router-link>
@@ -139,59 +80,130 @@ X
             <div
               class="absolute top-2 ml-6 text-white bg-[#57A695] px-1 rounded-full text-xs"
             >
-            {{ CartStore.itemsInCart }} 
+              {{ CartStore.itemCount }}
             </div>
           </div>
         </router-link>
 
-        <router-link to="/signup">
-          <div
-            class="w-max p-2 rounded-md bg-black flex items-center justify-center"
+        <!-- -----mobile nav button  -->
+
+        <div class="nav-button z-50" @click="toggleMenu" v-if="!isOpen">
+          <svg viewBox="0 0 12 10" class="hamburger w-[2rem] h-[2rem]">
+            <path d="M10,2 L2,2" class="bar1"></path>
+            <path d="M2,5 L10,5" class="bar2"></path>
+            <path d="M10,8 L2,8" class="bar3"></path>
+          </svg>
+        </div>
+
+        <div
+          class="text-3xl w-[2rem] h-[2rem]"
+          v-if="isOpen"
+          @click="toggleMenu"
+        >
+          X
+        </div>
+        <!-- --------- -->
+      </div>
+
+      <div class="links hidden lg:flex items-center w-[45rem] justify-between">
+        <div class="flex gap-8 items-center font-[avenir-medium]">
+          <router-link to="/"
+            ><div><p class="link">Home</p></div></router-link
           >
-            <img src="../assets/images/wishlist.svg" class="w-[1rem]" alt="wishlist"/>
+
+          <router-link to="/catalog"><p class="link">Catalog</p></router-link>
+
+          <div @click="goToAboutSection()" class="link">About us</div>
+
+          <a href="/#subscribe" class="link">
+            <p>Contact</p>
+          </a>
+        </div>
+
+        <div class="hidden lg:flex gap-2 items-center">
+          <router-link to="/wishlist">
+            <div
+              class="w-max p-2 rounded-md bg-[#57A695] flex items-center justify-center"
+            >
+              <img
+                src="../assets/images/star.svg"
+                class="w-[1rem] transition ease-in-out delay-150 hover:-translate-y-1 lg:hover:scale-110 duration-300"
+                alt="star"
+              />
+
+              <div
+                class="absolute top-2 ml-6 text-white bg-[#57A695] px-1 rounded-full text-xs"
+              >
+                {{ WishlistStore.favouritesCount }}
+              </div>
+            </div>
+          </router-link>
+
+          <router-link to="/cart">
+            <div
+              class="w-max p-2 rounded-md bg-black flex items-center justify-center"
+            >
+              <img
+                src="../assets/images/cart.svg"
+                class="transition ease-in-out delay-150 hover:-translate-y-1 lg:hover:scale-110 duration-300"
+                width="16"
+                alt="cart"
+              />
+
+              <div
+                class="absolute top-2 ml-6 text-white bg-[#57A695] px-1 rounded-full text-xs"
+              >
+                {{ CartStore.itemsInCart }}
+              </div>
+            </div>
+          </router-link>
+
+          <!-- <router-link to="/signup"> -->
+          <div
+            class="w-max p-2 rounded-md bg-black flex items-center justify-center transition ease-in-out delay-150 hover:-translate-y-1 lg:hover:scale-110 duration-300"
+          >
+            <img
+              src="../assets/images/wishlist.svg"
+              class="w-[1rem]"
+              alt="wishlist"
+            />
           </div>
-        </router-link>
+          <!-- </router-link> -->
+        </div>
       </div>
-
-
-    
     </div>
-   
-  </div>
 
+    <!-- ----- mobile navbar---- -->
+    <div
+      class="fixed z-50 bg-white w-full h-screen mt-16 flex flex-col px-4 font-[avenir-medium] pt-6 ease-in-out duration-700"
+      :class="[isOpen ? 'translate-x-0' : 'translate-x-full']"
+      @click="toggleMenu"
+    >
+      <router-link to="/wishlist">
+        <div class="flex items-center gap-4"></div>
+      </router-link>
 
-
-<!-- ----- mobile navbar---- -->
-  <div class="fixed z-50 bg-white w-full  h-screen mt-16 flex flex-col px-4 font-[avenir-medium] pt-6 ease-in-out duration-700 " :class="[isOpen ? 'translate-x-0':'translate-x-full']" @click="toggleMenu">
-    <router-link to="/wishlist">
-          <div class="flex items-center gap-4">
-    
-         
-          </div>
-          
-        </router-link>
-
-        <div class="flex   flex-col gap-6 h-full pt-6">
+      <div class="flex flex-col gap-6 h-full pt-6">
         <router-link to="/">
-          <div><p class="link">Home</p></div>
+          <div><p class="mobileLink">Home</p></div>
         </router-link>
-        <router-link to="/catalog"><p class="link">Catalog</p></router-link>
+        <router-link to="/catalog" class="mobileLink"
+          ><p>Catalog</p></router-link
+        >
 
-        <a href="/#about">
-          <p>About Us</p>
-        </a>
-       
-        <a href="/#subscribe">
-          <p>Contact</p>
-        </a>
-       
+        <div class="mobileLink">
+          <a href="/#about">
+            <p>About Us</p>
+          </a>
+        </div>
+
+        <div class="mobileLink">
+          <a href="/#subscribe">
+            <p>Contact</p>
+          </a>
+        </div>
       </div>
-
-
-
-  </div>
-
-  
+    </div>
   </div>
 </template>
 
@@ -211,18 +223,21 @@ X
   background-size: 100% 2px;
 }
 
-
 .hamburger path {
   fill: none;
   stroke: black;
   stroke-linecap: round;
 }
-.logo{
-  width:160px
+.logo {
+  width: 160px;
 }
-@media screen and (max-width:485px) {
-  .logo{
+@media screen and (max-width: 485px) {
+  .logo {
     width: 128px;
+  }
+  .mobileLink:hover,
+  .mobileLink:active {
+    color: #57a695;
   }
 }
 </style>
