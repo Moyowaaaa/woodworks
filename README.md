@@ -2,7 +2,7 @@
 
 ## Demo
 
-[View Live Site](https://https://woodworks.vercel.app/)
+[View Live Site](https://woodworks.vercel.app//)
 
 ## Woodworks | Find your perfect furniture
 
