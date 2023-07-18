@@ -1,11 +1,11 @@
 <script setup lang="ts">
-// import {} from 'vue-router'
-import router from "@/router";
+import { onMounted, ref, onUnmounted } from "vue";
+import { useRoute, useRouter } from "vue-router";
 import useCartStore from "@/stores/CartStore";
 import useWishlistStore from "@/stores/WishlistStore";
-import { onMounted, ref, watchEffect, onUnmounted } from "vue";
-import { useRoute, useRouter } from "vue-router";
+
 let menu = ref<boolean>(false);
+const router = useRouter();
 const CartStore = useCartStore();
 const WishlistStore = useWishlistStore();
 
@@ -34,14 +34,40 @@ onUnmounted(() => {
 });
 
 const goToAboutSection = () => {
-  const aboutElement = document.querySelector("#about");
-
+  isOpen.value = !isOpen.value;
+  const aboutElement = document.getElementById("about");
   if (aboutElement) {
-    router.push("/");
+    isOpen.value = !isOpen.value;
+    aboutElement.scrollIntoView({ behavior: "smooth" });
+  } else {
+    isOpen.value = !isOpen.value;
+    router.push("/").then(() => {
+      setTimeout(() => {
+        const aboutElement = document.getElementById("about");
+        if (aboutElement) {
+          aboutElement.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 1000);
+    });
+  }
+};
 
-    setTimeout(() => {
-      aboutElement.scrollIntoView({ behavior: "smooth" });
-    }, 2000);
+const goToContactSection = () => {
+  isOpen.value = !isOpen.value;
+  const contactElement = document.getElementById("subscribe");
+  if (contactElement) {
+    isOpen.value = !isOpen.value;
+    contactElement.scrollIntoView({ behavior: "smooth" });
+  } else {
+    isOpen.value = !isOpen.value;
+    router.push("/").then(() => {
+      setTimeout(() => {
+        const contactElement = document.getElementById("subscribe");
+        if (contactElement) {
+          contactElement.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 1000);
+    });
   }
 };
 </script>
@@ -115,7 +141,7 @@ const goToAboutSection = () => {
 
           <div @click="goToAboutSection()" class="link">About us</div>
 
-          <a href="/#subscribe" class="link">
+          <a @click="goToContactSection()" class="link">
             <p>Contact</p>
           </a>
         </div>
@@ -191,16 +217,12 @@ const goToAboutSection = () => {
           ><p>Catalog</p></router-link
         >
 
-        <div class="mobileLink">
-          <a href="/#about">
-            <p>About Us</p>
-          </a>
+        <div class="mobileLink" @click="goToAboutSection()">
+          <p>About Us</p>
         </div>
 
-        <div class="mobileLink">
-          <a href="/#subscribe">
-            <p>Contact</p>
-          </a>
+        <div class="mobileLink" @click="goToContactSection()">
+          <p>Contact</p>
         </div>
       </div>
     </div>
