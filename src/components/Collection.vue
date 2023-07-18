@@ -19,6 +19,7 @@
                   src="../assets/images/leftArrow.svg"
                   width="24px"
                   alt="left arrow"
+                  class="lazyload"
                 />
               </div>
             </div>

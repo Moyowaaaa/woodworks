@@ -16,7 +16,7 @@
 
     <img
       src="../assets/images/Empty.svg"
-      class="h-[12rem] lg:h-[20rem]"
+      class="lazyload h-[12rem] lg:h-[20rem]"
       alt="empty Icon"
     />
   </div>

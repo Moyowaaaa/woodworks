@@ -13,8 +13,8 @@
         ]"
       >
         <img
-          :src="product.image"
-          class=""
+        :src="product.image"
+        class="lazyload"
           :class="[product.scale === 'large' ? 'rounded-xl' : '']"
         />
       </div>
@@ -41,11 +41,12 @@
 </template>
 
 <script setup lang="ts">
+import 'lazysizes';
 import type { Product } from "@/types/interfaces";
-import { useRouter } from "vue-router";
 import useWishlistStore from "@/stores/WishlistStore";
 import { watchEffect, ref } from "vue";
 const WishlistStore = useWishlistStore();
+
 
 
 interface productProps {

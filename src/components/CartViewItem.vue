@@ -38,7 +38,7 @@
         >
           <img
             src="../assets/images/close.svg"
-            class="w-[1rem]"
+            class="lazyload w-[1rem]"
             alt="close Icon"
           />
         </div>

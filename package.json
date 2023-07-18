@@ -12,6 +12,7 @@
   "dependencies": {
     "@paystack/inline-js": "^2.12.6",
     "firebase": "^9.16.0",
+    "lazysizes": "^5.3.2",
     "pinia": "^2.0.26",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6"
