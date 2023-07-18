@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref, onUnmounted } from "vue";
+import { onMounted, ref, onUnmounted, watchEffect } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import useCartStore from "@/stores/CartStore";
 import useWishlistStore from "@/stores/WishlistStore";
@@ -32,6 +32,12 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener("scroll", handleScroll);
 });
+
+const scrollTop = () => {
+  window.scroll(0, 0);
+};
+
+console.log(route.name);
 
 const goToAboutSection = () => {
   isOpen.value = !isOpen.value;
@@ -79,7 +85,7 @@ const goToContactSection = () => {
       :class="[isScrolled ? 'bg-white shadow-md' : '']"
     >
       <router-link to="/">
-        <img src="../assets/images/logo.svg" class="logo" alt="woodworks" />
+        <img src="../assets/images/logo.svg" class="logo" alt="woodworks" @click="scrollTop()"/>
       </router-link>
 
       <div class="lg:hidden flex gap-2 items-center">
@@ -134,10 +140,14 @@ const goToContactSection = () => {
       <div class="links hidden lg:flex items-center w-[45rem] justify-between">
         <div class="flex gap-8 items-center font-[avenir-medium]">
           <router-link to="/"
-            ><div><p class="link">Home</p></div></router-link
+            ><div>
+              <p class="link" @click="scrollTop()">Home</p>
+            </div></router-link
           >
 
-          <router-link to="/catalog"><p class="link">Catalog</p></router-link>
+          <router-link to="/catalog"
+            ><p class="link" @click="scrollTop()">Catalog</p></router-link
+          >
 
           <div @click="goToAboutSection()" class="link">About us</div>
 
