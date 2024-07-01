@@ -37,8 +37,6 @@ const scrollTop = () => {
   window.scroll(0, 0);
 };
 
-console.log(route.name);
-
 const goToAboutSection = () => {
   isOpen.value = !isOpen.value;
   const aboutElement = document.getElementById("about");
@@ -85,7 +83,12 @@ const goToContactSection = () => {
       :class="[isScrolled ? 'bg-white shadow-md' : '']"
     >
       <router-link to="/">
-        <img src="../assets/images/logo.svg" class="logo" alt="woodworks" @click="scrollTop()"/>
+        <img
+          src="../assets/images/logo.svg"
+          class="logo"
+          alt="woodworks"
+          @click="scrollTop()"
+        />
       </router-link>
 
       <div class="lg:hidden flex gap-2 items-center">
@@ -193,18 +196,6 @@ const goToContactSection = () => {
               </div>
             </div>
           </router-link>
-
-          <!-- <router-link to="/signup"> -->
-          <div
-            class="w-max p-2 rounded-md bg-black flex items-center justify-center transition ease-in-out delay-150 hover:-translate-y-1 lg:hover:scale-110 duration-300"
-          >
-            <img
-              src="../assets/images/wishlist.svg"
-              class="w-[1rem]"
-              alt="wishlist"
-            />
-          </div>
-          <!-- </router-link> -->
         </div>
       </div>
     </div>
