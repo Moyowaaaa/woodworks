@@ -4,14 +4,12 @@ import { useRoute, useRouter } from "vue-router";
 import useCartStore from "@/stores/CartStore";
 import useWishlistStore from "@/stores/WishlistStore";
 
-let menu = ref<boolean>(false);
 const router = useRouter();
 const CartStore = useCartStore();
 const WishlistStore = useWishlistStore();
 
 const isScrolled = ref<boolean>(false);
 const isOpen = ref<boolean>(false);
-const route = useRoute();
 
 const toggleMenu = () => {
   isOpen.value = !isOpen.value;
@@ -238,7 +236,7 @@ const goToContactSection = () => {
   background-position: right -100% bottom 0;
   background-size: 200% 2px;
   background-repeat: no-repeat;
-  transition: background-size 0.3s, background-position 0s 0.3s; /*change after the size immediately*/
+  transition: background-size 0.3s, background-position 0s 0.3s;
 }
 
 .link:hover {
