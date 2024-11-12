@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /about
+Allow: /catalog
+Disallow: /signup
+Disallow: /cart
+Disallow: /wishlist
+Disallow: /item
+Sitemap: https://woodworks.vercel.app/sitemap.xml
